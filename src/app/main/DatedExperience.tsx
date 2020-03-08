@@ -12,8 +12,8 @@ const FromTo: React.FC = props => <span style={{width: 30, display: "inline-bloc
     {props.children}
 </span>
 
-export const DatedExperience: React.FC<DatedExperienceInput> = props => <div>
-    <div style={{float: 'left', width: 125, fontSize: MIN_FONT_SIZE}}>
+export const DatedExperience: React.FC<DatedExperienceInput> = props => <div style={{marginBottom: 10}}>
+    <div style={{float: 'left', width: 160, fontSize: MIN_FONT_SIZE}}>
         <p>
             <FromTo>from</FromTo>
             <b>{props.start}</b>
@@ -28,7 +28,7 @@ export const DatedExperience: React.FC<DatedExperienceInput> = props => <div>
         <div style={{marginTop: 4 ,fontSize: MIN_FONT_SIZE}}>
             {
                 props.subheadings.length === 0 ? null :
-                props.subheadings.map((item, index) => <span style={{marginBottom: 4}}>
+                props.subheadings.map((item, index) => <span style={{marginBottom: 4}} key={index}>
                     {index > 0 ? <span style={{width: 30, textAlign: 'center', verticalAlign: 'middle', display: 'inline-block', fontSize: 17}}>•</span> : null}
                     <span style={{fontStyle:'italic'}}>{item}</span>
                 </span>)

@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
             <p><b>University of Washington, 2014 — 2018</b></p>
             <br/>
             <p><b>Major</b>: Bachelor of Science in Computer Science</p>
-            <p style={{marginTop: 10}}>
+            <p style={{marginTop: 5}}>
                 <b>Minor</b>: Enrepreneurship
             </p>
         </div>
