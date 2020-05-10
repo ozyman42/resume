@@ -17,13 +17,16 @@ export const Sidebar: React.FC = () => <div>
         <SkillList skills={['Functional Programming', 'DRY', 'Design Patterns', 'SOLID', 'Service Oriented Architecture']} />
     </SidebarSection>
     <SidebarSection header="Front-End">
-        <SkillList skills={['React', 'React Hooks', 'Webpack', 'React Native', 'Vue', 'Electron', 'MobX', 'Redux', 'Angular', 'Ionic', 'jQuery', 'HTML5', 'SCSS', 'Web Workers']} />
+        <SkillList skills={['React', 'React Hooks', 'React Native', 'ReactXP', 'Vue', 'Electron', 'MobX', 'Redux', 'Angular', 'Ionic', 'jQuery', 'HTML5', 'SCSS']} />
+    </SidebarSection>
+    <SidebarSection header="Server-Side">
+        <SkillList skills={['Node.js', 'Deno', 'Java', 'Scala', 'Rust', 'Golang', 'Haskell', 'Python', 'C#', 'C', 'C++', 'VB', 'Ruby', 'Laravel', 'PostreSQL', 'SQLite', 'Neo4j', 'MongoDB', 'RethinkDB', 'Redis', 'Kafka']} />
+    </SidebarSection>
+    <SidebarSection header="Full-Stack">
+        <SkillList skills={['TypeScript', 'Webpack', 'Web Workers']} />
     </SidebarSection>
     <SidebarSection header="Dev-Ops">
         <SkillList skills={['Jenkins', 'Pulumi', 'Kubernetes', 'Infrastructure as Code', 'Docker', 'Linux', 'Nginx', 'Apache', 'Prometheus', 'AWS']} />
-    </SidebarSection>
-    <SidebarSection header="Server-Side">
-        <SkillList skills={['TypeScript', 'Node.js', 'Deno', 'Java', 'Scala', 'Rust', 'Golang', 'Haskell', 'Python', 'C#', 'C', 'C++', 'VB', 'Ruby', 'Laravel', 'PostreSQL', 'SQLite', 'Neo4j', 'MongoDB', 'RethinkDB', 'Redis', 'Kafka']} />
     </SidebarSection>
     <SidebarSection header="Protocols">
         <SkillList skills={['gRPC', 'GraphQL', 'REST', 'TLS']} />

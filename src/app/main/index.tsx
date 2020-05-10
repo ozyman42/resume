@@ -6,7 +6,7 @@ import { SimpleExperienceInput, SimpleExperience } from './SimpleExperience';
 const EXPERIENCES: DatedExperienceInput[] = [
     {
         start: "01/07/2019", end: "Present",
-        name: "Software Development Engineer (L4)",
+        name: "Software Development Engineer (L5)",
         subheadings: [
             "Amazon.com, Inc.",
             "Seattle, WA",
@@ -31,7 +31,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
         contributions: [
             "Developed and documented one-time-password verification for payment screens.",
             "Integrated with internal authentication services using Scala and Java APIs.",
-            "Added customer phone number view to meet last-minute requirements change."
+            //"Added customer phone number view to meet last-minute requirements change."
         ]
     },
     {
@@ -72,7 +72,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
 const OPEN_SOURCE: SimpleExperienceInput[] = [
     {
         title: "Skoville",
-        description: "Webpack-dev-server alternative I created using TypeScript and GraphQL to enable webpack HMR for both web and node.js. Broken into several npm packages to allow plug-n-play of networking implementation.",
+        description: "Webpack-dev-server alternative I am actively developing using TypeScript univeral gRPC. It enables webpack HMR for web and node.js. Broken into several npm packages to allow plug-n-play of networking and/or hot swap runtimes.",
         link: {
             text: "github.com/skoville/webpack-hot-module-replacement",
             href: 'https://github.com/skoville/webpack-hot-module-replacement'
@@ -80,7 +80,7 @@ const OPEN_SOURCE: SimpleExperienceInput[] = [
     },
     {
         title: "TypeScript Monorepo",
-        description: "Lerna alternative I built to manage Skoville; it auto-generates tsconfig.json with project references.",
+        description: "Lerna alternative I built to manage TypeScript monorepos (ex. Skoville); it auto-generates tsconfig.json with project references and package.json based on config templates shared between packages, and utilizes Yarn v2 (Berry)",
         link: {
             text: "@isomorphic-typescript/ts-monorepo NPM package",
             href: "https://www.npmjs.com/package/@isomorphic-typescript/ts-monorepo"
