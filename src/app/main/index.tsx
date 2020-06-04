@@ -5,84 +5,103 @@ import { SimpleExperienceInput, SimpleExperience } from './SimpleExperience';
 
 const EXPERIENCES: DatedExperienceInput[] = [
     {
-        start: "01/07/2019", end: "Present",
-        name: "Software Development Engineer (L5)",
-        subheadings: [
-            "Amazon.com, Inc.",
-            "Seattle, WA",
-            ["Java", "AWS", "React", "Angular", "mTLS"].join(", ")
-        ],
-        contributions: [
-            "Integrated Background Check microservice with vendor REST API",
-            "Created data warehousing pipelines from AWS Dynamo DB tables to AWS Redshift",
-            "Enabled in-app facial recognition of package deliverers (live ID check during shift)",
-            "Rotated as on-call once every 1.5 months, resolving numerous high-sev events",
-            "Refactored monolithic services into AWS Lambda-based microservices"
-        ]
-    },
-    {
-        start: "09/25/2017", end: "12/15/2017",
-        name: "Software Development Engineer Intern",
-        subheadings: [
-            "Amazon.com, Inc.",
-            "Seattle, WA",
-            ["Scala", "Java", "jQuery", "SCSS"].join(", ")
-        ],
-        contributions: [
-            "Developed and documented one-time-password verification for payment screens.",
-            "Integrated with internal authentication services using Scala and Java APIs.",
-            //"Added customer phone number view to meet last-minute requirements change."
+        start: "09/25/2017", end: "Present",
+        jobTitle: "Software Development Engineer",
+        employerName: "Amazon.com",
+        jobLocation: "Seattle, WA",
+        teams: [
+            {
+                teamName: "Flex Account Management Team",
+                technologies: ["Java", "AWS", "React", "Coral (RPC)", "ElasticSearch"],
+                contributions: [
+                    "Designed/Impl microservices in rearchitecture of legacy monolith services",
+                    "Created Hybrid Web-App views in React"
+                ]
+            },
+            {
+                teamName: "Flex Risk/Compliance Team",
+                technologies: ["Java", "AWS", "Angular", "mTLS", "Coral (RPC)", "SQL"],
+                contributions: [
+                    "Integrated Background Check microservice with vendor REST APIs",
+                    "Microservices for in-app facial recognition of package deliverers (en-route ID check)",
+                    "Created data warehousing pipelines from AWS Dynamo DB tables to AWS Redshift",
+                    "Rotated as on-call once per month, resolving numerous high-severity events",
+                    "Automated code deployment (CI/CD pipeline building)"
+                ]
+            },
+            {
+                teamName: "Payments Experience Team",
+                technologies: ["Scala", "Java", "jQuery", "SCSS", "Coral (RPC)"],
+                contributions: [
+                    "Developed and documented one-time-password verification for payment screens.",
+                    "Integrated with internal authentication services using Scala and Java APIs.",
+                ]
+            }
         ]
     },
     {
         start: "08/01/2016", end: "09/22/2017",
-        name: "Lead Software Engineer",
-        subheadings: [
-            "Leasera, LLC",
-            "Seattle, WA",
-            ["TypeScript", "GraphQL", "React", "RoR", "Jenkins", "AWS"].join(", ")
-        ],
-        contributions: [
-            "Maintained views written in SCSS, Bootstrap, jQuery, and Ruby on Rails ERB.",
-            "Created new views as React components using Redux and Apollo GraphQL.",
-            "Designed MySQL schema. Optimized DB migrations, SQL transactions, ORM code.",
-            "Maintained server infrastructure; configured EC2, Jenkins, Nginx, MySQL, Redis.",
-            "Wrote mobile application using React Native, Redux, and Apollo GraphQL.",
-            "Integrated 3rd-party APIs such as Stripe, Zillow, TransUnion, Twilio, Mailgun, etc.",
-            "Lead team in goal setting and deadline planning. Reported sprint progress to CEO."
+        jobTitle: "Lead Software Engineer",
+        employerName: "Leasera.com",
+        jobLocation: "Seattle, WA",
+        teams: [
+            {
+                teamName: "core team",
+                technologies: ["TypeScript", "GraphQL", "React", "Ruby on Rails", "Jenkins", "AWS", "MySQL"],
+                contributions: [
+                    "Maintained views written in SCSS, Bootstrap, jQuery, and Ruby on Rails ERB.",
+                    "Created new views as React components using Redux and Apollo GraphQL.",
+                    "Designed MySQL schema. Optimized DB migrations, SQL transactions, ORM code.",
+                    "Maintained server infrastructure; configured EC2, Jenkins, Nginx, MySQL, Redis.",
+                    "Wrote mobile application using React Native, Redux, and Apollo GraphQL.",
+                    "Integrated 3rd-party APIs such as Stripe, Zillow, TransUnion, Twilio, Mailgun, etc.",
+                    "Lead team in goal setting and deadline planning. Reported sprint progress to CEO."
+                ]
+            }
         ]
     },
     {
         start: '08/15/2014', end: '06/24/2016',
-        name: 'Junior Software Engineer',
-        subheadings: [
-            "ThruHealth, LLC",
-            "Bellevue, WA",
-            ["Laravel", "Java", "SCSS", "jQuery", "C#", "Angular"].join(", ")
-        ],
-        contributions: [
-            'Created company marketing website and blog with CSS, jQuery, and PHP.',
-            'Constructed web crawlers to pull online health-care data ontologies using C#.',
-            'Wrote utilities to parse and normalize HL7 electronic health records using Java.',
-            'Created mobile applications using Ionic 1.0.'
+        jobTitle: 'Junior Software Engineer',
+        employerName: "ThruHealth, LLC",
+        jobLocation: "Bellevue, WA",
+        teams: [
+            {
+                teamName: 'core team',
+                technologies: ["Laravel", "Java", "SCSS", "jQuery", "C#", "Angular"],
+                contributions: [
+                    'Created company marketing website and blog with CSS, jQuery, and PHP.',
+                    'Constructed web crawlers to pull online health-care data ontologies using C#.',
+                    'Wrote utilities to parse and normalize HL7 electronic health records using Java.',
+                    'Created mobile applications using Ionic 1.0.'
+                ]
+            }
         ]
     }
 ];
 
 const OPEN_SOURCE: SimpleExperienceInput[] = [
     {
-        title: "Skoville",
-        description: "Webpack-dev-server alternative I am actively developing using TypeScript univeral gRPC. It enables webpack HMR for web and node.js. Broken into several npm packages to allow plug-n-play of networking and/or hot swap runtimes.",
+        title: 'Apollo GraphQL Subscriptions',
+        description: 'Authored the generic GraphQL synscription AyncIterator utility for Apollo in TypeScript. Used implicitly by all Apollo GraphQL subscription sub-implementations (Redis, Postgres, Kafka, RabbitMQ, etc.).',
         link: {
-            text: "github.com/skoville/webpack-hot-module-replacement",
+            text: "https://github.com/apollographql/graphql-subscriptions/pull/78",
+            href: 'https://github.com/apollographql/graphql-subscriptions/pull/78'
+        }
+    },
+    {
+        title: "Skoville",
+        description: "Webpack-dev-server alternative I am actively developing using TypeScript and gRPC. Enables webpack HMR for web and node.js. Broken into several npm packages allowing users to customize networking and JS runtimes.",
+        link: {
+            text: "https://github.com/skoville/webpack-hot-module-replacement",
             href: 'https://github.com/skoville/webpack-hot-module-replacement'
         }
     },
     {
         title: "TypeScript Monorepo",
-        description: "Lerna alternative I built to manage TypeScript monorepos (ex. Skoville); it auto-generates tsconfig.json with project references and package.json based on config templates shared between packages, and utilizes Yarn v2 (Berry)",
+        description: "Lerna alternative I built for TypeScript monorepos (ex. Skoville); it generates tsconfig.json project-references and package.json based on config templates re-used between packages. Extends Yarn v2 (Berry) workspaces.",
         link: {
-            text: "@isomorphic-typescript/ts-monorepo NPM package",
+            text: "https://www.npmjs.com/package/@isomorphic-typescript/ts-monorepo",
             href: "https://www.npmjs.com/package/@isomorphic-typescript/ts-monorepo"
         }
     },
@@ -92,59 +111,57 @@ const OPEN_SOURCE: SimpleExperienceInput[] = [
         description: "A project I'm planning to start; a TypeGraphQL alternative where the schema is written in TypeScript and shared between server and client. Client is auto-generated, while server code implements the interfaces"
     },
     */
-    {
-        title: 'Apollo GraphQL Subscriptions',
-        description: 'Authored the generic TypeScript subscription utility for Apollo GraphQL repo used by all Apollo GraphQL subscription implementations (Redis, AWS SNS, Postgres, etc.).',
-        link: {
-            text: "github.com/apollographql/graphql-subscriptions/pull/78",
-            href: 'https://github.com/apollographql/graphql-subscriptions/pull/78'
-        }
-    }
 ];
 
 const SIDE_HUSTLE: DatedExperienceInput[] = [
     {
         start: "05/15/2017", end: "09/23/2017",
-        name: "ConsiderEat",
-        subheadings: [
-            "ConsiderEat",
-            "Seattle, WA",
-            ["React Native", "Apollo GraphQL"].join(", ")
-        ],
-        contributions: [
-            "A short-lived start-up I co-founded with college classmates that allows restaurants to sell leftover food for a discount price over an app before closing time"
+        jobTitle: "Co-Founder, CEO, CTO",
+        employerName: "ConsiderEat",
+        jobLocation: "Seattle, WA",
+        teams: [
+            {
+                teamName: "core team",
+                technologies: ["React", "React Native", "Apollo GraphQL"],
+                contributions: [
+                    "Co-founded a short-lived start up with college classmates that allows restaurants to sell leftover food for a discount price before closing time using an app."
+                ]
+            }
         ]
     },
     {
         start: '8/12/2014', end: '6/20/2015',
-        name: 'International Baccalaureate (IB) Surveys',
-        subheadings: [
-            "Northshore School District",
-            "Bothell, WA",
-            "Laravel, CSS"
-        ],
-        contributions: [
-            `Website I created for my high school’s IB department to survey students on education quality and generate reports for school's IB department heads.`
+        jobTitle: 'Web Development Contractor',
+        employerName: "NSD",
+        jobLocation: "Kenmore, WA",
+        teams: [
+            {
+                teamName: "core team",
+                technologies: ["Laravel PHP", "CSS", "MySQL", "AWS"],
+                contributions: [
+                    `Built website for Inglemoor High School’s International Baccalaureate department as a Northshore School District contractor to survey students on education quality and generate reports for department and district leadership.`
+                ]
+            }
         ]
     }
 ];
 
 export const MainContent: React.FC = () => <>
-    <MainSection header="Industry Experience">
+    <MainSection header="Employment">
         {
             EXPERIENCES.map((experience, index) => <div key={index}>
                 <DatedExperience {...experience} />
             </div>)
         }
     </MainSection>
-    <MainSection header="Open Source Contribution">
+    <MainSection header="Open Source">
         {
             OPEN_SOURCE.map((contribution, index) => <div key={index}>
                 <SimpleExperience {...contribution} />
             </div>)
         }
     </MainSection>
-    <MainSection header="Self-Employment">
+    <MainSection header="Entrepreneurship">
         {
             SIDE_HUSTLE.map((sideHustle, index) => <div key={index}>
                 <DatedExperience {...sideHustle} />

@@ -15,8 +15,8 @@ const pdfDimensions = {
     height: 1320
 }
 
-const HEADER_HEIGHT = 115;
-const SIDEBAR_WIDTH = 300;
+const HEADER_HEIGHT = 125;
+const SIDEBAR_WIDTH = 290;
 
 export const App = hot(module)(() => (
     <div style={{display: "block", width: pdfDimensions.width, height: pdfDimensions.height, backgroundColor: MAIN_CONENT_COLOR}}>
@@ -27,12 +27,12 @@ export const App = hot(module)(() => (
         </div>
         <div style={{height: `calc(100% - ${HEADER_HEIGHT}px)`, overflow: 'hidden'}}>
             <div style={{backgroundColor: MAIN_SIDEBAR_COLOR, width: SIDEBAR_WIDTH, float: 'right', height: '100%'}}>
-                <div style={{padding: 20}}>
+                <div style={{padding: 15}}>
                     <Sidebar />
                 </div>
             </div>
             <div style={{overflow: 'hidden'}}>
-                <div style={{padding: 16}}>
+                <div style={{padding: 15}}>
                     <MainContent />
                 </div>
             </div>

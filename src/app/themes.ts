@@ -6,4 +6,5 @@ export const SIDEBAR_DIVIDER_COLOR = "#e6e6e6";
 export const MAIN_CONTENT_DIVIDER_COLOR = "#cfcfcf";
 
 export const PARAGRAPH_LINE_HEIGHT = 1.6;
+export const EXPERIENCE_TITLE_FONT_SIZE = "15px";
 export const MIN_FONT_SIZE = "13px";
