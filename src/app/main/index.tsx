@@ -5,7 +5,7 @@ import { SimpleExperienceInput, SimpleExperience } from './SimpleExperience';
 
 const EXPERIENCES: DatedExperienceInput[] = [
     {
-        start: "09/25/2017", end: "Present",
+        start: "9/25/2017", end: "Present",
         jobTitle: "Software Development Engineer",
         employerName: "Amazon.com",
         jobLocation: "Seattle, WA",
@@ -15,14 +15,14 @@ const EXPERIENCES: DatedExperienceInput[] = [
                 technologies: ["Java", "AWS", "React", "Coral (RPC)", "ElasticSearch"],
                 contributions: [
                     "Designed/Impl microservices in rearchitecture of legacy monolith services",
-                    "Created Hybrid Web-App views in React"
+                    "Created hybrid web-app views in React"
                 ]
             },
             {
                 teamName: "Flex Risk/Compliance Team",
                 technologies: ["Java", "AWS", "Angular", "mTLS", "Coral (RPC)", "SQL"],
                 contributions: [
-                    "Integrated Background Check microservice with vendor REST APIs",
+                    "Integrated background check microservice with external vendor REST APIs",
                     "Microservices for in-app facial recognition of package deliverers (en-route ID check)",
                     "Created data warehousing pipelines from AWS Dynamo DB tables to AWS Redshift",
                     "Rotated as on-call once per month, resolving numerous high-severity events",
@@ -40,7 +40,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
         ]
     },
     {
-        start: "08/01/2016", end: "09/22/2017",
+        start: "8/01/2016", end: "9/22/2017",
         jobTitle: "Lead Software Engineer",
         employerName: "Leasera.com",
         jobLocation: "Seattle, WA",
@@ -53,7 +53,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
                     "Created new views as React components using Redux and Apollo GraphQL.",
                     "Designed MySQL schema. Optimized DB migrations, SQL transactions, ORM code.",
                     "Maintained server infrastructure; configured EC2, Jenkins, Nginx, MySQL, Redis.",
-                    "Wrote mobile application using React Native, Redux, and Apollo GraphQL.",
+                    "Created mobile application using React Native, Redux, and Apollo GraphQL.",
                     "Integrated 3rd-party APIs such as Stripe, Zillow, TransUnion, Twilio, Mailgun, etc.",
                     "Lead team in goal setting and deadline planning. Reported sprint progress to CEO."
                 ]
@@ -61,7 +61,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
         ]
     },
     {
-        start: '08/15/2014', end: '06/24/2016',
+        start: '8/15/2014', end: '6/24/2016',
         jobTitle: 'Junior Software Engineer',
         employerName: "ThruHealth, LLC",
         jobLocation: "Bellevue, WA",
@@ -83,7 +83,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
 const OPEN_SOURCE: SimpleExperienceInput[] = [
     {
         title: 'Apollo GraphQL Subscriptions',
-        description: 'Authored the generic GraphQL synscription AyncIterator utility for Apollo in TypeScript. Used implicitly by all Apollo GraphQL subscription sub-implementations (Redis, Postgres, Kafka, RabbitMQ, etc.).',
+        description: 'Authored the generic GraphQL subscription AyncIterator for Apollo in TypeScript. Used implicitly by many existing open-source Apollo GraphQL subscription implementations (Redis, Postgres, Kafka, RabbitMQ, etc.).',
         link: {
             text: "https://github.com/apollographql/graphql-subscriptions/pull/78",
             href: 'https://github.com/apollographql/graphql-subscriptions/pull/78'
@@ -115,7 +115,7 @@ const OPEN_SOURCE: SimpleExperienceInput[] = [
 
 const SIDE_HUSTLE: DatedExperienceInput[] = [
     {
-        start: "05/15/2017", end: "09/23/2017",
+        start: "5/15/2017", end: "9/23/2017",
         jobTitle: "Co-Founder, CEO, CTO",
         employerName: "ConsiderEat",
         jobLocation: "Seattle, WA",
