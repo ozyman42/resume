@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { MAIN_THEME_COLOR, MAIN_THEME_CONSTRAST_COLOR, MIN_FONT_SIZE } from 'app/themes';
+import { Text } from '../Text';
 
 const SPACING = '5px'
 
@@ -17,7 +18,7 @@ export const SkillList: React.FC<{skills: string[]}> = props => <div>
     {
         props.skills.map((skill, index) => 
         <span key={index} style={SKILL_STYLE}>
-            {skill.replace(" ", '\u00A0')}
+            <Text text={skill.split(" ").join('\u00A0')} splitBy={'\u00A0'} />
         </span>)
     }
 </div>

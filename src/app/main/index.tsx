@@ -12,14 +12,14 @@ const EXPERIENCES: DatedExperienceInput[] = [
         teams: [
             {
                 teamName: "Flex Account Management Team",
-                technologies: ["Java", "AWS", "React", "Coral (RPC)", "ElasticSearch"],
+                technologies: ["Java", "AWS", "React", "Coral (RPC)", "Elasticsearch"],
                 contributions: [
-                    "Designed/Impl microservices in rearchitecture of legacy monolith services",
+                    "Designed, implemented microservices in rearchitecture of legacy monoliths",
                     "Created hybrid web-app views in React"
                 ]
             },
             {
-                teamName: "Flex Risk/Compliance Team",
+                teamName: "Flex Risk Compliance Team",
                 technologies: ["Java", "AWS", "Angular", "mTLS", "Coral (RPC)", "SQL"],
                 contributions: [
                     "Integrated background check microservice with external vendor REST APIs",
@@ -83,7 +83,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
 const OPEN_SOURCE: SimpleExperienceInput[] = [
     {
         title: 'Apollo GraphQL Subscriptions',
-        description: 'Authored the generic GraphQL subscription AyncIterator for Apollo in TypeScript. Used implicitly by many existing open-source Apollo GraphQL subscription implementations (Redis, Postgres, Kafka, RabbitMQ, etc.).',
+        description: 'Authored the generic GraphQL subscription AsyncIterator for Apollo in TypeScript. Used implicitly by many existing open-source Apollo GraphQL subscription implementations (Redis, PostgreSQL, Kafka, RabbitMQ, etc.).',
         link: {
             text: "https://github.com/apollographql/graphql-subscriptions/pull/78",
             href: 'https://github.com/apollographql/graphql-subscriptions/pull/78'
@@ -139,7 +139,7 @@ const SIDE_HUSTLE: DatedExperienceInput[] = [
                 teamName: "core team",
                 technologies: ["Laravel PHP", "CSS", "MySQL", "AWS"],
                 contributions: [
-                    `Built website for Inglemoor High School’s International Baccalaureate department as a Northshore School District contractor to survey students on education quality and generate reports for department and district leadership.`
+                    `Built website for Inglemoor High School's International Baccalaureate department as a Northshore School District contractor to survey students on education quality and generate reports for department and district leadership.`
                 ]
             }
         ]

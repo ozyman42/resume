@@ -18,7 +18,7 @@ export const Sidebar: React.FC = () => <div>
         <SkillList skills={['React + Hooks', 'React Native', 'ReactXP', 'Vue', 'Electron', 'MobX', 'Redux', 'Ionic', 'Angular', 'jQuery', 'HTML5', 'SCSS']} />
     </SidebarSection>
     <SidebarSection header="Server-Side">
-        <SkillList skills={['Node.js', 'Deno', 'Java', 'Scala', 'Rust', 'Golang', 'Haskell', 'Python', 'C#', 'C', 'C++', 'VB', 'Ruby', 'PHP', 'Kafka', 'PostreSQL', 'SQLite', 'Neo4j', 'MongoDB', 'RethinkDB', 'Redis']} />
+        <SkillList skills={['Node.js', 'Deno', 'Java', 'Scala', 'Rust', 'Golang', 'Haskell', 'Python', 'C#', 'C', 'C++', 'VB', 'Ruby', 'PHP', 'Kafka', 'PostgreSQL', 'SQLite', 'Neo4j', 'MongoDB', 'RethinkDB', 'Redis']} />
     </SidebarSection>
     <SidebarSection header="Full-Stack">
         <SkillList skills={['TypeScript', 'Webpack', 'Web Workers']} />
