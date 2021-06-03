@@ -11,11 +11,11 @@ const EXPERIENCES: DatedExperienceInput[] = [
         jobLocation: "Seattle, WA",
         teams: [
             {
-                teamName: "Flex Account Management Team",
-                technologies: ["Java", "AWS", "React", "Coral (RPC)", "Elasticsearch"],
+                teamName: "Flex Identity Team",
+                technologies: ["Java", "AWS", "Coral (RPC)", "Elasticsearch"],
                 contributions: [
-                    "Designed, implemented microservices in rearchitecture of legacy monoliths",
-                    "Created hybrid web-app views in React"
+                    "Extended OAuth microservice to support AuthN and AuthZ of various user types",
+                    "Maintained role-based authorization (RBAC) microservice"
                 ]
             },
             {

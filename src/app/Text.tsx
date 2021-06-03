@@ -6,10 +6,10 @@ const dictionary = spelling(rawDictionary);
 
 const additionalAllowedWords: string[] = [
     "—", '+',
-    'contractor', 'report', 'microservice', 'workspace', 'runtime',
+    'contractor', 'report', 'microservice', 'workspace', 'runtime', 'workflow', 'OAuth', 'RBAC',
     'record', 'monorepo', 'dev', 'etc.', "into", "config", "CTO", 'per', 'discount', 'recognition', 'rearchitecture',
     // Proper nouns
-    "LinkedIn", "Inglemoor", "Northshore", "Zillow", "Twilio", "Mailgun", "TransUnion",
+    "LinkedIn", "Inglemoor", "Northshore", "Zillow", "Twilio", "Mailgun", "TransUnion", "AuthN", "AuthZ",
     // Technologies
     'GraphQL', 'AWS', 'Redshift', 'gRPC', 'webpack', 'Skoville', "RPC", "RabbitMQ", "Redis", "PostgreSQL",
     "Redux", "Vue", "MobX", "jQuery", "HTML5", "JS", "SCSS", "C#", "PHP", "SQLite", "Neo4j", "C++", "Golang",
