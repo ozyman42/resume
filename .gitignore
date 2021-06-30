@@ -1,8 +1,7 @@
+.yarn
+.pnp.js
+.yarnrc.yml
+yarn.lock
 .vscode
-.idea
-.DS_STORE
-node_modules
-.module-cache
-*.log*
-build
-dist
+.ts-monorepo
+site/*hot-update*

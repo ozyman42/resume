@@ -1,0 +1,139 @@
+{
+    "version": "0.0.0",
+    "ttypescript": false,
+    "port": 1000,
+    "templates": {
+        "standard": {
+            "extends": [],
+            "files": {
+                "json": {
+                    "package.json": {
+                        "author": "Alexander Leung"
+                    },
+                    "tsconfig.json": {
+                        "compilerOptions": {
+                            "target": "es6",
+                            "lib": ["esnext"],
+                            "module": "commonjs",
+                            "moduleResolution": "node",
+                            "strict": true,
+                            "pretty": true,
+                            "noFallthroughCasesInSwitch": true,
+                            "noImplicitReturns": true,
+                            "forceConsistentCasingInFileNames": true
+                        }
+                    }
+                },
+                "ignore": {
+                    ".gitignore": [
+                        "/build",
+                        "/package.json",
+                        "/tsconfig.json",
+                        "/tsconfig.tsbuildinfo"
+                    ]
+                }
+            }
+        }
+    },
+    "packages": {
+        "@alleung": {
+            "resume": {
+                "-components~": {
+                    "extends": ["standard"],
+                    "files": {
+                        "json": {
+                            "package.json": {
+                                "devDependencies": [
+                                    "@types/node",
+                                    "@types/react"
+                                ],
+                                "dependencies": [
+                                    "react",
+                                    "spelling",
+                                    "@react-pdf/renderer"
+                                ],
+                                "main": "./build/Resume.js"
+                            },
+                            "tsconfig.json": {
+                                "compilerOptions": {
+                                    "jsx": "react"
+                                }
+                            }
+                        }
+                    }
+                },
+                "-pdf-render~": {
+                    "extends": ["standard"],
+                    "files": {
+                        "json": {
+                            "package.json": {
+                                "dependencies": [
+                                    "@alleung/resume-components"
+                                ]
+                            },
+                            "tsconfig.json": {
+                                "compilerOptions": {}
+                            }
+                        }
+                    }
+                },
+                "-web-render~": {
+                    "extends": ["standard"],
+                    "files": {
+                        "json": {
+                            "package.json": {
+                                "devDependencies": [
+                                    "@types/webpack-env",
+                                    "@types/react",
+                                    "@types/react-dom"
+                                ],
+                                "dependencies": [
+                                    "@alleung/resume-components",
+                                    "react",
+                                    "react-dom"
+                                ]
+                            },
+                            "tsconfig.json": {
+                                "compilerOptions": {
+                                    "lib": ["dom"],
+                                    "jsx": "react",
+                                    "types": ["webpack-env"]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "web-dev-bundler~": {
+                "extends": ["standard"],
+                "files": {
+                    "json": {
+                        "package.json": {
+                            "devDependencies": [
+                                "@types/node",
+                                "@types/webpack-hot-middleware",
+                                "@types/webpack-dev-middleware",
+                                "@types/express"
+                            ],
+                            "dependencies": [
+                                // All websites which we want to bundle
+                                "@alleung/resume-web-render",
+                                // Others
+                                "webpack-dev-middleware",
+                                "webpack-hot-middleware",
+                                "express",
+                                "webpack",
+                                "source-map-support"
+                            ]
+                        },
+                        "tsconfig.json": {
+                            "compilerOptions": {
+                                "types": ["node"]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
