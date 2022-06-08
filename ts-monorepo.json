@@ -45,12 +45,13 @@
                             "package.json": {
                                 "devDependencies": [
                                     "@types/node",
-                                    "@types/react"
+                                    ["@types/react", "^17"]
                                 ],
                                 "dependencies": [
-                                    "react",
+                                    ["react", "^17"],
                                     "spelling",
-                                    "@react-pdf/renderer"
+                                    "@react-pdf/renderer",
+                                    "react-icons"
                                 ],
                                 "main": "./build/Resume.js"
                             },
@@ -84,13 +85,13 @@
                             "package.json": {
                                 "devDependencies": [
                                     "@types/webpack-env",
-                                    "@types/react",
-                                    "@types/react-dom"
+                                    ["@types/react", "^17"],
+                                    ["@types/react-dom", "^17"]
                                 ],
                                 "dependencies": [
                                     "@alleung/resume-components",
-                                    "react",
-                                    "react-dom"
+                                    ["react", "^17"],
+                                    ["react-dom", "^17"]
                                 ]
                             },
                             "tsconfig.json": {

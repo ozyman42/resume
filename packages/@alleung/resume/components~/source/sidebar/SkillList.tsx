@@ -1,24 +1,20 @@
 import * as React from 'react';
-import { MAIN_THEME_COLOR, MAIN_THEME_CONSTRAST_COLOR, MIN_FONT_SIZE } from '../themes';
+import { BADGE_FONT_COLOR, BADGE_HEADER_COLOR, CODE_SNIPPET_STYLE, MAIN_THEME_EMPHASIS_COLOR, MONOSPACE_FONT } from '../themes';
 import { Text } from '../Text';
 
-const SPACING = '5px'
+const Mono: React.FC<{type: 'head' | 'item' | 'reg'}> = props => 
+    <span style={{fontFamily: MONOSPACE_FONT, color: {head: BADGE_HEADER_COLOR, item: BADGE_FONT_COLOR, reg: MAIN_THEME_EMPHASIS_COLOR}[props.type]}}>{props.children}</span>
 
-const SKILL_STYLE = {
-    margin: `0 ${SPACING} ${SPACING} 0`,
-    backgroundColor: MAIN_THEME_COLOR, color: MAIN_THEME_CONSTRAST_COLOR,
-    display: 'inline-block',
-    padding: SPACING,
-    borderRadius: 10,
-    fontSize: MIN_FONT_SIZE,
-    verticalAlign: 'middle'
-}
-
-export const SkillList: React.FC<{skills: string[]}> = props => <div>
+export const SkillList: React.FC<{skills: string[]; header: string}> = props => 
+<pre style={{...CODE_SNIPPET_STYLE, marginBottom: 5}}>
+    <Mono type='head'>{props.header}</Mono><Mono type='reg'>:</Mono>&#13;&#10;{/*<Mono type='reg'>&#91;</Mono>*/}
     {
-        props.skills.map((skill, index) => 
-        <span key={index} style={SKILL_STYLE}>
-            <Text text={skill.split(" ").join('\u00A0')} splitBy={'\u00A0'} />
-        </span>)
+        props.skills.map((skill, index) => <React.Fragment key={index}>
+            <Mono type='item'>
+                <Text text={skill.split(" ").join('\u00A0')} splitBy={'\u00A0'} />
+            </Mono>
+            {index < props.skills.length - 1 && <Mono type="reg">, </Mono>}
+        </React.Fragment>)
     }
-</div>
+    {/*<Mono type="reg">&#93;</Mono>*/}
+</pre>

@@ -4,7 +4,7 @@
   "private": true,
   "keywords": [],
   "scripts": {
-    "build:web": "shx rm -rf ./site/*hot-update.* && yarn workspace @alleung/web-dev-bundler node -r source-map-support/register ./build/front-end-bundle.js",
+    "build:web": "shx rm -rf ./site/*hot-update.* || true && yarn workspace @alleung/web-dev-bundler node -r source-map-support/register ./build/front-end-bundle.js",
     "build:pdf": ""
   },
   "license": "MIT",

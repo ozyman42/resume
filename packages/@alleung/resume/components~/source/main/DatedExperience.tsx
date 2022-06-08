@@ -1,54 +1,53 @@
 import * as React from 'react';
-import { MIN_FONT_SIZE, PARAGRAPH_LINE_HEIGHT } from '../themes';
+import { BADGE_HEADER_COLOR, MAIN_THEME_EMPHASIS_COLOR, MAIN_THEME_LEAST_EMPHASIS_COLOR, MAIN_THEME_LESS_EMPHASIS_COLOR, MIN_FONT_SIZE, PARAGRAPH_LINE_HEIGHT, SUBHEADER_COLOR } from '../themes';
 import { ExperienceTitle } from './ExperienceTitle';
 import { HorizontalList } from './HorizontalList';
 import { Text } from '../Text';
 
 export interface TeamExperience {
     contributions: string[];
-    teamName: string;
+    teamName?: string;
     technologies: string[];
 }
 
 export interface DatedExperienceInput {
-    start: string;
-    end: string;
+    start: Date;
+    end: Date;
     jobTitle: string;
     employerName: string;
-    jobLocation: string;
+    jobLocation?: string;
     teams: TeamExperience[];
 }
 
 const LabelItem: React.FC<{first: boolean, labelName: string, labelValue: string}> = props => <p style={{marginTop: props.first ? 0 : 1}}>
-    <span style={{width: 30, display: "inline-block", textAlign: 'right', marginRight: 8}}>
+    <span style={{width: 30, display: "inline-block", textAlign: 'right', marginRight: 5}}>
         <Text text={props.labelName} />
     </span>
-    <b>{props.labelValue}</b>
+    <span style={{color: MAIN_THEME_LESS_EMPHASIS_COLOR}}>{props.labelValue}</span>
 </p>
 
-const Paragraph: React.FC<{style?: React.CSSProperties}> = props => <p style={{lineHeight: PARAGRAPH_LINE_HEIGHT, ...(props.style || {})}} >
+const Paragraph: React.FC<{style?: React.CSSProperties, children: React.ReactNode}> = props => <p style={{lineHeight: PARAGRAPH_LINE_HEIGHT, ...(props.style || {})}} >
     {props.children}
 </p>
 
-const Team: React.FC<{displayName: boolean, team: TeamExperience}> = props => <>
-    <Paragraph style={{margin: '4px 0'}}>
-        {props.displayName ? <>
-            <b><Text text={props.team.teamName} /></b>
-            <span style={{marginLeft: 10}} ></span>
-        </> : null }
+const Team: React.FC<{team: TeamExperience}> = props => <>
+    <Paragraph style={{marginTop: 4}}>
+        {props.team.teamName && <span style={{marginRight: 5, color: BADGE_HEADER_COLOR}}>
+            {props.team.teamName}
+        </span>}
         <HorizontalList items={props.team.technologies} />
     </Paragraph>
     {
         props.team.contributions.length === 0 ? 
             null :
         props.team.contributions.length === 1 ? 
-            <Paragraph>
+            <Paragraph style={{color: MAIN_THEME_LESS_EMPHASIS_COLOR}}>
                 <Text text={props.team.contributions[0]} />
             </Paragraph> :
         // else
             <ul style={{listStyle: "disc inside"}}>
                 {
-                    props.team.contributions.map((contribution, index) => <li key={index} style={{lineHeight: PARAGRAPH_LINE_HEIGHT}}>
+                    props.team.contributions.map((contribution, index) => <li key={index} style={{lineHeight: PARAGRAPH_LINE_HEIGHT, color: MAIN_THEME_LESS_EMPHASIS_COLOR}}>
                         <Text text={contribution} />
                     </li>)
                 }
@@ -56,12 +55,13 @@ const Team: React.FC<{displayName: boolean, team: TeamExperience}> = props => <>
     }
 </>;
 
-export const DatedExperience: React.FC<DatedExperienceInput> = props => <div style={{marginBottom: 10}}>
-    <div style={{float: 'left', width: 155, fontSize: MIN_FONT_SIZE}}>
+const DATE_SECTION_WIDTH = 125;
+export const DatedExperience: React.FC<DatedExperienceInput> = props => <div style={{marginBottom: 10, display: 'flex', flexDirection: 'row'}}>
+    <div style={{width: DATE_SECTION_WIDTH, fontSize: MIN_FONT_SIZE}}>
         {
             Object.entries({
                 at: props.employerName,
-                in: props.jobLocation,
+                ...(props.jobLocation ? {in: props.jobLocation} : {"": "Remotely"}),
                 from: props.start,
                 to: props.end,
             }).map(([k, v], index) => 
@@ -69,15 +69,15 @@ export const DatedExperience: React.FC<DatedExperienceInput> = props => <div sty
                     key={index}
                     first={index === 0}
                     labelName={k}
-                    labelValue={v}
+                    labelValue={typeof v === 'string' ? v : (Date.now() - v.getTime() < 1000*60) ? 'Present' : `${v.toLocaleString('en-us', {month: 'short'})} ${v.getFullYear()}`}
                 />)
         }
     </div>
-    <div style={{overflow: 'hidden'}}>
+    <div style={{overflow: 'hidden', width: `calc(100% - ${DATE_SECTION_WIDTH}px)`}}>
         <ExperienceTitle><Text text={props.jobTitle} /></ExperienceTitle>
         <div style={{fontSize: MIN_FONT_SIZE}}>
             {
-                props.teams.map((team, index) => <Team displayName={props.teams.length > 1} team={team} key={index}/>)
+                props.teams.map((team, index) => <Team team={team} key={index}/>)
             }
         </div>
     </div>
