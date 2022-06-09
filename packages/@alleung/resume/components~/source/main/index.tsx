@@ -14,7 +14,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
                 technologies: ["TypeScript", "GraphQL", "Node.js", "Express", "Spinnaker"],
                 contributions: [
                     "Lobbied Hulu, Disney clients to adopt our Flex microservice; it vends cross-platform UI as data, allowing generic platform code and rapid experimentation by configuration",
-                    "Architected migration of Flex from a REST to GraphQL subgraph for new the new company-wide federated GraphQL API standard created as part of the Hulu Disney+ unification effort",
+                    "Architected migration of Flex from a RESTful API to GraphQL subgraph for the new company-wide federated GraphQL service created as part of the Hulu, Disney+ unification effort",
                     "Forged partnership w/ similar Disney team. We took over UI as data API, they i18n as a service"
                 ]
             }
