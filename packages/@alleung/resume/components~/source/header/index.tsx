@@ -14,7 +14,7 @@ const Bold: React.FC<{t: string}> = ({t}) => <span style={{color: MAIN_THEME_EMP
 
 export const Header: React.FC = () => {
     return <div style={{width: '100%', color: MAIN_THEME_EMPHASIS_COLOR, display: 'flex', flexDirection: 'row'}}>
-        <div style={{marginRight: 33, marginLeft: 15}}>
+        <div style={{marginRight: 25, marginLeft: 15}}>
             <img src="./profile-pic.png" height={85} style={{marginTop: 5, borderRadius: 50, verticalAlign: 'middle'}} />
         </div>
         <div style={{overflow: 'hidden', flexGrow: 1}}>

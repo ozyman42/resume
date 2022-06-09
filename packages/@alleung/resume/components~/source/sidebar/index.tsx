@@ -4,9 +4,10 @@ import { SkillList } from './SkillList';
 import { FaMobileAlt, FaEnvelope, FaGlobe, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MAIN_THEME_EMPHASIS_COLOR, MAIN_THEME_LEAST_EMPHASIS_COLOR, MAIN_THEME_LESS_EMPHASIS_COLOR, MIN_FONT_SIZE } from '../themes';
 import { Text } from '../Text';
+import { Link } from '../Link';
 
 const Header: React.FC<{header: string;}> = props => 
-<p style={{color: MAIN_THEME_EMPHASIS_COLOR, fontWeight: 'bold', textTransform: 'uppercase', fontSize: MIN_FONT_SIZE, margin: '20px 10px 10px 10px'}}><Text text={props.header} /></p>
+<p style={{color: MAIN_THEME_EMPHASIS_COLOR, fontWeight: 'bold', textTransform: 'uppercase', fontSize: MIN_FONT_SIZE, margin: '15px 10px 5px 10px'}}><Text text={props.header} /></p>
 
 const Interests: React.FC<{interests: string[]}> = props => 
 <div style={{color: MAIN_THEME_LESS_EMPHASIS_COLOR, fontSize: MIN_FONT_SIZE}}>
@@ -16,6 +17,19 @@ const Interests: React.FC<{interests: string[]}> = props =>
     )}
     </ul>
 </div>
+
+const OpenSource: React.FC<{contributions: {link: string, description: string}[]}> = props =>
+<div style={{color: MAIN_THEME_LESS_EMPHASIS_COLOR, fontSize: MIN_FONT_SIZE}}>
+    <ul style={{listStyle: 'disc', marginLeft: 25}}>
+        {props.contributions.map(({link, description}, index) =>
+            <li key={index} style={{padding: '2px 0'}}>
+                <span style={{marginRight: 5}}><Text text={description} /></span>
+                {link.length > 0 && <Link to={`https://github.com/${link}`} text={link} />}
+            </li>
+        )}
+    </ul>
+</div>
+
 
 export const Sidebar: React.FC = () => <div style={{padding: 5}}>
     <div style={{padding: '10px 10px 0 10px'}}>
@@ -34,6 +48,12 @@ export const Sidebar: React.FC = () => <div style={{padding: 5}}>
     <SkillList header="Protocols" skills={['gRPC', 'GraphQL', 'REST', 'TLS']} />
     <SkillList header="Crypto / AuthZN" skills={['OAuth2', 'Asymmetric Key Crypto', 'Digital Signatures']} />
     <SkillList header="Web 3" skills={['EVM (Solidity)', 'Solana']} />
-    <Header header="Personal Interests"/>
-    <Interests interests={["Macro Economics", "History", "Finance", "Web 3 / Smart Contracts", "Psychology"]} />
+    {/*<Header header="Personal Interests"/>*/}
+    {/*<Interests interests={["Macro Economics", "History", "Finance", "Web 3 / Smart Contracts", "Psychology"]} />*/}
+    <Header header="Open Source"/>
+    <OpenSource contributions={[
+        {link: 'apollographql/graphql-subscriptions/pull/78', description: 'Authored core pub sub utility powering majority of Node.js Apollo GraphQL subscription resolvers'},
+        {link: 'denoland/deno/issues/1558', description: 'Opened discussion on implementing QUIC (HTTP3) support in Deno'},
+        {link: 'isomorphic-typescript/ts-isomorphic-gql', description: 'Created library for typesafe GraphQL clients and schemas without requiring triggered codegen'}
+    ]} />
 </div>;

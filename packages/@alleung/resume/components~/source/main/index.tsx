@@ -14,7 +14,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
                 technologies: ["TypeScript", "GraphQL", "Node.js", "Express", "Spinnaker"],
                 contributions: [
                     "Lobbied Hulu, Disney clients to adopt our Flex microservice; it vends cross-platform UI as data, allowing generic platform code and rapid experimentation by configuration",
-                    "Migrated Flex from REST to GraphQL for new GraphQL amalgamator (Hulu, Disney+ unification)",
+                    "Architected migration of Flex from a REST to GraphQL subgraph for new the new company-wide federated GraphQL API standard created as part of the Hulu Disney+ unification effort",
                     "Forged partnership w/ similar Disney team. We took over UI as data API, they i18n as a service"
                 ]
             }
@@ -163,7 +163,7 @@ const SIDE_HUSTLE: DatedExperienceInput[] = [
         employerName: "Space Bums",
         teams: [
             {
-                technologies: ["React", "Node.js", "TypeScript", "Nx", "Solana", "Rust", "GCP"],
+                technologies: ["React", "Node.js", "TypeScript", "Nx", "Solana", "Rust", "GCP", "Next.js"],
                 contributions: [
                     "Acted as lead architect, TPM, PM, hiring manager to assemble team of 4 software engineers",
                     "Sold 10,000 space-themed Solana-based NFTs for $1.5m to over 6,000 customers",
