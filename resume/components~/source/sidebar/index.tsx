@@ -40,20 +40,21 @@ export const Sidebar: React.FC = () => <div style={{padding: 5}}>
         <KeyValue k={FaLinkedin} v="linkedin.com/in/alex-l-leung" link="https://linkedin.com/in/alex-l-leung" />
     </div>
     <Header header="Technical Skills"/>
-    <SkillList header="Maintainability" skills={['Functional Programming', 'DRY', 'Design Patterns', 'SOLID', 'Service Oriented Architecture']} />
-    <SkillList header="Front-End" skills={['React', 'React Native', 'Vue', 'Electron', 'MobX', 'Redux', 'Zustand', 'Ionic', 'Angular', 'jQuery', 'HTML', 'SCSS', 'Tailwind', 'Webpack', 'Web Workers']} />
+    <SkillList header="Maintainability" skills={['DRY', 'Design Patterns', 'SOLID', 'Service Oriented Architecture', 'Majestic Monoliths']} />
+    <SkillList header="Front-End" skills={['Next.js', 'Remix', 'React', 'React Native', 'Vue', 'Ionic', 'Angular', 'jQuery', 'HTML', 'SCSS', 'Tailwind', 'Webpack', 'Web Workers']} />
     <SkillList header="Server-Side" skills={['Node.js', 'Kafka', 'PostgreSQL', 'SQLite', 'Neo4j', 'Cockroach DB', 'Redis', 'DynamoDB', 'Serverless (ex. AWS Lambda)']} />
-    <SkillList header="Languages" skills={['TypeScript', 'Java', 'Kotlin', 'Scala', 'Rust', 'Ruby', 'Solidity', 'Golang', 'Haskell', 'Python', 'C#', 'C', 'C++', 'VB', 'Ruby', 'PHP', 'SQL']} />
-    <SkillList header="Dev Infrastructure" skills={['AWS', 'GCP', 'Jenkins', 'Pulumi', 'K8s', 'IaC', 'CDK', 'Terraform', 'Docker', 'Linux', 'Nginx', 'Apache', 'Prometheus', 'Spinnaker']} />
+    <SkillList header="Languages" skills={['TypeScript', 'Java', 'Kotlin', 'Scala', 'Rust', 'Ruby', 'Solidity', 'Golang', 'Python', 'C#', 'C', 'C++', 'Ruby', 'PHP', 'SQL', 'HCL']} />
+    <SkillList header="Dev Infrastructure" skills={['AWS', 'GCP', 'Github Actions', 'Buildkite', 'ArgoCD', 'K8s', 'IaC', 'CDK', 'Terraform', 'Docker', 'Linux', 'Envoy', 'Nginx', 'Apache', 'Spinnaker', 'Backstage']} />
     <SkillList header="Protocols" skills={['gRPC', 'GraphQL', 'REST', 'TLS']} />
     <SkillList header="Crypto / AuthZN" skills={['OAuth2', 'Asymmetric Key Crypto', 'Digital Signatures']} />
-    <SkillList header="Web 3" skills={['EVM (Solidity)', 'Solana']} />
+    <SkillList header="Web 3" skills={['EVM', 'Solana', 'Move']} />
+    <SkillList header="Observability" skills={['Open Telemetry', 'Datadog', 'Grafana', 'Loki', 'Sumologic', 'Prometheus']} />
     {/*<Header header="Personal Interests"/>*/}
     {/*<Interests interests={["Macro Economics", "History", "Finance", "Web 3 / Smart Contracts", "Psychology"]} />*/}
-    <Header header="Open Source"/>
-    <OpenSource contributions={[
+    {/*(<Header header="Open Source"/>*/}
+    <OpenSource contributions={[]/*[
         {link: 'apollographql/graphql-subscriptions/pull/78', description: 'Authored core pub sub utility powering majority of Node.js Apollo GraphQL subscription resolvers'},
         {link: 'denoland/deno/issues/1558', description: 'Opened discussion on implementing QUIC (HTTP3) support in Deno'},
         {link: 'isomorphic-typescript/ts-isomorphic-gql', description: 'Created library for typesafe GraphQL clients and schemas without requiring triggered codegen'}
-    ]} />
+    ]*/} />
 </div>;

@@ -5,6 +5,32 @@ import { SimpleExperienceInput, SimpleExperience } from './SimpleExperience';
 
 const EXPERIENCES: DatedExperienceInput[] = [
     {
+        start: new Date("8/24/2022"), end: new Date(),
+        jobTitle: "Tech Lead / Senior Software Engineer",
+        jobLocation: "Bellevue",
+        employerName: "Flexport",
+        teams: [
+            {
+                teamName: "Edge Services",
+                technologies: ["TypeScript", "Rust", "GraphQL", "Node.js", "Envoy", "K8s", "AWS CloudMap", "Datadog"],
+                contributions: [
+                    "Architected unified API Gateway for Flexport. Lead team of 4 engineers to develop this",
+                    "Championed operational excellence on the federated GraphQL team. Reduced client latency by 50%; improved client reliability from three 9s to four 9s.",
+                    "Got cross company consensus on new dynamic service discovery standard using AWS CloudMap. This merged three competing standards at the company.",
+                    "Brokered convergence of the two major competeing service infra frameworks at the company."
+                ]
+            },
+            {
+                teamName: "Frontend Infra",
+                technologies: ["TypeScript", "GraphQL", "Next.js", "AWS ECS", "K8s", "Terraform", "Datadog"],
+                contributions: [
+                    "Architected microfrontends framework for Flexport. Lead team of 7 engineers to create this and successfully collaborated with my EM and skip EM to onboard three separate orgs",
+                    "Convinced company to adopt PNPM as a JS dependency manager, TypeScript rather than Flow"
+                ]
+            }
+        ]
+    },
+    {
         start: new Date("9/20/2021"), end: new Date("2/1/2022"),
         jobTitle: "Tech Lead / Senior Software Engineer",
         employerName: "Hulu",
@@ -157,7 +183,7 @@ const OPEN_SOURCE: SimpleExperienceInput[] = [
 ];
 
 const SIDE_HUSTLE: DatedExperienceInput[] = [
-    {
+    /*{
         start: new Date("1/1/2022"), end: new Date("5/5/2022"),
         jobTitle: "Co-Founder, CTO",
         employerName: "Space Bums",
@@ -185,11 +211,11 @@ const SIDE_HUSTLE: DatedExperienceInput[] = [
                 ]
             }
         ]
-    },
+    },*/
 ];
 
 export const MainContent: React.FC = () => <>
-    <MainSection header="Employment">
+    <MainSection>
         {
             EXPERIENCES.map((experience, index) => <div key={index}>
                 <DatedExperience {...experience} />

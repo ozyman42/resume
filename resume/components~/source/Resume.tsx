@@ -15,9 +15,9 @@ const pdfDimensions = {
 }
 
 const HEADER_HEIGHT = 125;
-const SIDEBAR_WIDTH = 250;
+const SIDEBAR_WIDTH = 270;
 
-export const Resume: React.FC = () => <div style={{display: "flex", width: pdfDimensions.width, height: pdfDimensions.height, flexDirection: 'column'}}>
+export const Resume = () => <div style={{display: "flex", width: pdfDimensions.width, height: pdfDimensions.height, flexDirection: 'column'}}>
     <div style={{width: '100%', height: HEADER_HEIGHT, backgroundColor: SECONDARY_THEME_COLOR, overflow: 'hidden', padding: 15, boxSizing: 'border-box', borderBottom: `1px solid ${SECTION_DIVIDER_COLOR}`}}>
         <Header />
     </div>
