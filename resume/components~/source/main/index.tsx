@@ -12,7 +12,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
         teams: [
             {
                 teamName: "Edge Services",
-                technologies: ["TypeScript", "Rust", "GraphQL", "Node.js", "Envoy", "K8s", "AWS CloudMap", "Datadog"],
+                technologies: ["TypeScript", "Rust", "GraphQL", "Node.js", "Envoy", "K8s", "AWS CloudMap"],
                 contributions: [
                     "Architected unified API Gateway for Flexport. Lead team of 4 engineers to develop this",
                     "Championed operational excellence on the federated GraphQL team. Reduced client latency by 50%; improved client reliability from three 9s to four 9s.",
@@ -25,7 +25,8 @@ const EXPERIENCES: DatedExperienceInput[] = [
                 technologies: ["TypeScript", "GraphQL", "Next.js", "AWS ECS", "K8s", "Terraform", "Datadog"],
                 contributions: [
                     "Architected microfrontends framework for Flexport. Lead team of 7 engineers to create this and successfully collaborated with my EM and skip EM to onboard three separate orgs",
-                    "Convinced company to adopt PNPM as a JS dependency manager, TypeScript rather than Flow"
+                    "Drove adoption plan of PNPM as a JS dependency manager.",
+                    "Lead migration Flow to TypeScript migration (Flexport has 3 million lines of JS)"
                 ]
             }
         ]

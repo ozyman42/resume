@@ -7,7 +7,7 @@ const Mono: React.FC<{type: 'head' | 'item' | 'reg'}> = props =>
 
 export const SkillList: React.FC<{skills: string[]; header: string}> = props => 
 <pre style={{...CODE_SNIPPET_STYLE, marginBottom: 5}}>
-    <Mono type='head'>{props.header}</Mono><Mono type='reg'>:</Mono>&#13;&#10;{/*<Mono type='reg'>&#91;</Mono>*/}
+    <Mono type='head'>{props.header}</Mono><Mono type='reg'>: </Mono>&#13;&#10;{/*<Mono type='reg'>&#91;</Mono>*/}
     {
         props.skills.map((skill, index) => <React.Fragment key={index}>
             <Mono type='item'>
