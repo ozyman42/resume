@@ -24,7 +24,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
                 teamName: "Frontend Infra",
                 technologies: ["TypeScript", "GraphQL", "Next.js", "AWS ECS", "K8s", "Terraform", "Datadog"],
                 contributions: [
-                    "Architected microfrontends framework for Flexport. Lead team of 7 engineers to create this and successfully collaborated with my EM and skip EM to onboard three separate orgs",
+                    "Architected microfrontends framework for Flexport. Lead team of 7 engineers to create this and successfully collaborated with my EM and skip EM to onboard six separate orgs",
                     "Drove adoption plan of PNPM as a JS dependency manager.",
                     "Lead migration Flow to TypeScript migration (Flexport has 3 million lines of JS)"
                 ]
