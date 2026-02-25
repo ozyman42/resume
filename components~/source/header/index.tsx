@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
             </div>
             <p style={{fontSize: 17, marginTop: 11, color: MAIN_THEME_LESS_EMPHASIS_COLOR}}>
                 {
-                    ['Senior SWE', 'Experimenter', 'Investor', 'Lifelong Student'].map((iAmA, index) => 
+                    ['Senior SWE', 'Tech Lead', 'Experimenter', 'Lifelong Student'].map((iAmA, index) => 
                         <span key={index}>
                             {index == 0 ? null : <span style={{width: 17, display:'inline-block', textAlign: 'center', color: MAIN_THEME_LEAST_EMPHASIS_COLOR}}>•</span>}
                             <Text text={iAmA} />

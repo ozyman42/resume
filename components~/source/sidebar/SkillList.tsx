@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BADGE_FONT_COLOR, BADGE_HEADER_COLOR, CODE_SNIPPET_STYLE, MAIN_THEME_EMPHASIS_COLOR, MONOSPACE_FONT } from '../themes';
 import { Text } from '../Text';
 
-const Mono: React.FC<{type: 'head' | 'item' | 'reg'}> = props => 
+const Mono: React.FC<{type: 'head' | 'item' | 'reg'; children?: React.ReactNode}> = props => 
     <span style={{fontFamily: MONOSPACE_FONT, color: {head: BADGE_HEADER_COLOR, item: BADGE_FONT_COLOR, reg: MAIN_THEME_EMPHASIS_COLOR}[props.type]}}>{props.children}</span>
 
 export const SkillList: React.FC<{skills: string[]; header: string}> = props => 
