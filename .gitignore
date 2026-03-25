@@ -25,3 +25,5 @@ site/*hot-update*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.jive
