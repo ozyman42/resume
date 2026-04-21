@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MAIN_THEME_COLOR, MAIN_THEME_EMPHASIS_COLOR, SECONDARY_THEME_COLOR, SECTION_DIVIDER_COLOR} from './themes';
+import { MAIN_THEME_COLOR, SECONDARY_THEME_COLOR, SECTION_DIVIDER_COLOR, SANS_FONT} from './themes';
 import { Header } from './header';
 import { Sidebar } from './sidebar';
 import { MainContent } from './main';
@@ -16,9 +16,53 @@ const pdfDimensions = {
 
 const HEADER_HEIGHT = 125;
 const SIDEBAR_WIDTH = 270;
+const REQUIRED_WEB_FONT_FAMILIES = ["Resume Sans", "Resume Mono"];
 
-export const Resume = () => <div style={{display: "flex", width: pdfDimensions.width, height: pdfDimensions.height, flexDirection: 'column'}}>
-    <div style={{width: '100%', height: HEADER_HEIGHT, backgroundColor: SECONDARY_THEME_COLOR, overflow: 'hidden', padding: 15, boxSizing: 'border-box', borderBottom: `1px solid ${SECTION_DIVIDER_COLOR}`}}>
+function normalizeFontFamily(family: string) {
+    return family.replace(/^["']|["']$/g, "");
+}
+
+async function assertWebFontsLoaded() {
+    await document.fonts.ready;
+
+    const fonts = Array.from(document.fonts);
+    const projectFonts = fonts.filter((font) => REQUIRED_WEB_FONT_FAMILIES.includes(normalizeFontFamily(font.family)));
+
+    await Promise.all(projectFonts.map((font) => font.load()));
+    await document.fonts.ready;
+
+    const loadedFonts = fonts.map((font) => ({
+        family: normalizeFontFamily(font.family),
+        status: font.status,
+        weight: font.weight,
+        style: font.style,
+    }));
+    const missingFonts = REQUIRED_WEB_FONT_FAMILIES.filter((font) => !loadedFonts.some((loadedFont) => loadedFont.family === font));
+    const failedFonts = loadedFonts.filter((font) => REQUIRED_WEB_FONT_FAMILIES.includes(font.family) && font.status !== "loaded");
+
+    if (missingFonts.length > 0 || failedFonts.length > 0) {
+        throw new Error([
+            missingFonts.length > 0 ? `Missing webfonts: ${missingFonts.join(", ")}` : null,
+            failedFonts.length > 0
+                ? `Failed webfonts: ${failedFonts.map((font) => `${font.family} ${font.weight} ${font.style} (${font.status})`).join(", ")}`
+                : null,
+        ].filter(Boolean).join("; "));
+    }
+}
+
+export const Resume = () => {
+    const [fontError, setFontError] = React.useState<Error | null>(null);
+
+    React.useEffect(() => {
+        assertWebFontsLoaded().catch(setFontError);
+    }, []);
+
+    if (fontError) {
+        throw fontError;
+    }
+
+    return <div style={{display: "flex", width: pdfDimensions.width, height: pdfDimensions.height, flexDirection: 'column', fontFamily: SANS_FONT}}>
+    <div style={{height: HEADER_HEIGHT - 30, backgroundColor: SECONDARY_THEME_COLOR, overflow: 'hidden', padding: 15, boxSizing: 'content-box', borderBottom: `1px solid ${SECTION_DIVIDER_COLOR}`}}>
         <Header />
     </div>
     <div style={{display: 'flex', overflow: 'hidden', flexDirection: 'row', flexGrow: 1}}>
@@ -32,3 +76,4 @@ export const Resume = () => <div style={{display: "flex", width: pdfDimensions.w
         </div>
     </div>
 </div>;
+}

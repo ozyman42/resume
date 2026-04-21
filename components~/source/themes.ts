@@ -13,14 +13,16 @@ export const LINK_COLOR = "rgb(63, 131, 248)";
 export const BADGE_BACKGROUND_COLOR = "rgb(28, 100, 242)";
 export const BADGE_FONT_COLOR = "rgb(150, 203, 254)";
 export const BADGE_HEADER_COLOR = "rgb(249, 238, 152)";
-export const MONOSPACE_FONT = `monospace`;
+export const SANS_FONT = `"Resume Sans"`;
+export const MONOSPACE_FONT = `"Resume Mono"`;
 export const CODE_SNIPPET_BORDER_RADIUS = 12;
 export const CODE_SNIPPET_STYLE: CSSProperties = {
     borderRadius: CODE_SNIPPET_BORDER_RADIUS,
     background: MAIN_THEME_COLOR,
     padding: 10,
     whiteSpace: 'pre-wrap',
-    fontFamily: MONOSPACE_FONT
+    fontFamily: MONOSPACE_FONT,
+    fontSize: 12.5
 };
 export const PARAGRAPH_LINE_HEIGHT = 1.6;
 export const MIN_FONT_SIZE = "13px";

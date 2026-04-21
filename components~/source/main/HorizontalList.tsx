@@ -12,7 +12,7 @@ export const CircleSeparator: React.FC<{}> = props => <span style={{
     backgroundColor: MAIN_THEME_LEAST_EMPHASIS_COLOR}}>
 </span>
 
-export const HorizontalList: React.FC<{title?: string, items: string[]}> = props => <pre style={{...CODE_SNIPPET_STYLE, margin: 0, display: 'inline-block', padding: 0}}>
+export const HorizontalList: React.FC<{title?: string, items: string[]}> = props => <code style={{...CODE_SNIPPET_STYLE, margin: 0, display: 'inline-block', padding: 0}}>
     {props.title && <>
         <span style={{fontSize: MIN_FONT_SIZE, color: MAIN_THEME_LESS_EMPHASIS_COLOR, fontFamily: MONOSPACE_FONT}}>{props.title}: </span>
     </>}
@@ -25,4 +25,4 @@ export const HorizontalList: React.FC<{title?: string, items: string[]}> = props
             </span>
         </React.Fragment>)
     }
-</pre>;
+</code>;

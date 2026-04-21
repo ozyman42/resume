@@ -14,6 +14,10 @@ const basePath =
 
 const nextConfig = {
   reactStrictMode: true,
+  webpack: (config) => {
+    config.cache = { type: 'memory' }
+    return config
+  },
   ...(isGitHubActions ? { output: 'export' } : {}),
   ...(basePath
     ? {
