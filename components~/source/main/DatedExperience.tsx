@@ -12,11 +12,21 @@ export interface TeamExperience {
 
 export interface DatedExperienceInput {
     start: Date;
-    end: Date;
+    end: Date | 'Present';
     jobTitle: string;
     employerName: string;
     jobLocation?: string;
     teams: TeamExperience[];
+}
+
+const MONTH_LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function formatLabelValue(value: string | Date) {
+    if (typeof value === 'string') {
+        return value;
+    }
+
+    return `${MONTH_LABELS[value.getMonth()]} ${value.getFullYear()}`;
 }
 
 const LabelItem: React.FC<{first: boolean, labelName: string, labelValue: string}> = props => <p style={{marginTop: props.first ? 0 : 1}}>
@@ -47,7 +57,7 @@ const Team: React.FC<{team: TeamExperience}> = props => <>
         // else
             <ul style={{listStyle: "disc inside"}}>
                 {
-                    props.team.contributions.map((contribution, index) => <li key={index} style={{lineHeight: PARAGRAPH_LINE_HEIGHT, color: MAIN_THEME_LESS_EMPHASIS_COLOR}}>
+                    props.team.contributions.map((contribution, index) => <li key={index} style={{lineHeight: PARAGRAPH_LINE_HEIGHT, color: MAIN_THEME_LESS_EMPHASIS_COLOR, fontSize: 14}}>
                         <Text text={contribution} />
                     </li>)
                 }
@@ -69,7 +79,7 @@ export const DatedExperience: React.FC<DatedExperienceInput> = props => <div sty
                     key={index}
                     first={index === 0}
                     labelName={k}
-                    labelValue={typeof v === 'string' ? v : (Date.now() - v.getTime() < 1000*60) ? 'Present' : `${v.toLocaleString('en-us', {month: 'short'})} ${v.getFullYear()}`}
+                    labelValue={formatLabelValue(v)}
                 />)
         }
     </div>

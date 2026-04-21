@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "Resume Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/SFPRODISPLAYREGULAR.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Resume Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/SFPRODISPLAYMEDIUM.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Resume Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/SFPRODISPLAYBOLD.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Resume Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Menlo-Regular.woff") format("woff");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

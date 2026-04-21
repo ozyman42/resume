@@ -5,28 +5,23 @@ import { SimpleExperienceInput, SimpleExperience } from './SimpleExperience';
 
 const EXPERIENCES: DatedExperienceInput[] = [
     {
-        start: new Date("8/24/2022"), end: new Date(),
-        jobTitle: "Tech Lead / Senior Software Engineer",
+        start: new Date("8/24/2022"), end: new Date("3/15/2026"),
+        jobTitle: "Tech Lead / Staff Software Engineer",
         jobLocation: "Bellevue",
         employerName: "Flexport",
         teams: [
             {
-                teamName: "Edge Services",
-                technologies: ["TypeScript", "Rust", "GraphQL", "Node.js", "Envoy", "K8s", "AWS CloudMap"],
+                teamName: "Foundational Services",
+                technologies: ["TypeScript", "GraphQL", "Node", "Next", "Envoy", "Terraform", "K8s", "OAuth2", "RBAC", "AWS"],
                 contributions: [
-                    "Architected unified API Gateway for Flexport. Lead team of 4 engineers to develop this",
-                    "Championed operational excellence on the federated GraphQL team. Reduced client latency by 50%; improved client reliability from three 9s to four 9s.",
-                    "Got cross company consensus on new dynamic service discovery standard using AWS CloudMap. This merged three competing standards at the company.",
-                    "Brokered convergence of the two major competeing service infra frameworks at the company."
-                ]
-            },
-            {
-                teamName: "Frontend Infra",
-                technologies: ["TypeScript", "GraphQL", "Next.js", "AWS ECS", "K8s", "Terraform", "Datadog"],
-                contributions: [
-                    "Architected microfrontends framework for Flexport. Lead team of 7 engineers to create this and successfully collaborated with my EM and skip EM to onboard six separate orgs",
-                    "Drove adoption plan of PNPM as a JS dependency manager.",
-                    "Lead migration Flow to TypeScript migration (Flexport has 3 million lines of JS)"
+                    "Championed operational excellence across GraphQL stack. Reduced all API request latency by 50%. Improved backend reliability from below 90% to over 99% by architecting fine-grained error attribution system and driving company-wide accountability.",
+                    "Standardized authorization across company, both GraphQL authz and service-to-service authz",
+                    "Got cross company consensus on new dynamic service discovery standard using AWS CloudMap. This merged several competing standards at the company.",
+                    "Consolidated ingress across all apps / external APIs into a single entrypoint for improved security / simplicity; led team of 4 to create new unified API gateway",
+                    "Drove consolidation of similar libraries and developer tools across multiple codebases. Measured DevX improvements quantitatively using developer velocity metrics, code reduction, and developer surveys and qualitatively using developer anecdotes and interviews",
+                    "Led Flow to TypeScript migration for legacy websites and tools",
+                    "Led migration from Algolia to OpenSearch for one division, saving $500k per year",
+                    "Architected microfrontends framework for Flexport. Lead team of 7 engineers to create this; onboarded six separate orgs, become foundation for Flexport's most profitable applications",
                 ]
             }
         ]
@@ -40,7 +35,7 @@ const EXPERIENCES: DatedExperienceInput[] = [
                 teamName: "Flex",
                 technologies: ["TypeScript", "GraphQL", "Node.js", "Express", "Spinnaker"],
                 contributions: [
-                    "Lobbied Hulu, Disney clients to adopt our Flex microservice; it vends cross-platform UI as data, allowing generic platform code and rapid experimentation by configuration",
+                    "Drove adoption of our cross-platform UI-as-data microservice \"Flex\", it allows simple, generic device rendering code and rapid experimentation by configuration",
                     "Architected migration of Flex from a RESTful API to GraphQL subgraph for the new company-wide federated GraphQL service created as part of the Hulu, Disney+ unification effort",
                     "Forged partnership w/ similar Disney team. We took over UI as data API, they i18n as a service"
                 ]
@@ -108,14 +103,14 @@ const EXPERIENCES: DatedExperienceInput[] = [
                     "Built Ruby on Rails ERB / jQuery views then later migrated these to React + GraphQL",
                     "Designed MySQL schema. Optimized DB migrations, SQL transactions, ORM code",
                     "Maintained server infrastructure; configured EC2, Jenkins, Nginx, MySQL, Redis",
-                    "Created mobile application using React Native, Redux, and Apollo GraphQL",
+                    "Led project to create new mobile app using React Native, Redux, and Apollo GraphQL",
                     "Integrated 3rd-party APIs such as Stripe, Zillow, TransUnion, Twilio, Mailgun, etc.",
                     "Lead team in goal planning and managing delivery timelines. Reported sprint progress to CEO"
                 ]
             }
         ]
     },
-    {
+    /*{
         start: new Date('8/15/2014'), end: new Date('6/24/2016'),
         jobTitle: 'Junior Software Engineer',
         employerName: "ThruHealth",
@@ -127,11 +122,11 @@ const EXPERIENCES: DatedExperienceInput[] = [
                     'Created company marketing website and blog with CSS, jQuery, and PHP',
                     'Constructed web crawlers to pull online health-care data ontologies using C#',
                     'Wrote utilities to parse and normalize HL7 electronic health records using Java',
-                    'Created mobile applications using Ionic 1.0'
+                    'Created mobile application using Ionic 1.0'
                 ]
             }
         ]
-    },
+    },*/
     /*{
         start: new Date('8/12/2014'), end: new Date('6/20/2015'),
         jobTitle: 'Web Development Contractor',
