@@ -22,9 +22,8 @@ const OpenSource: React.FC<{contributions: {link: string, description: string}[]
 <div style={{color: MAIN_THEME_LESS_EMPHASIS_COLOR, fontSize: MIN_FONT_SIZE}}>
     <ul style={{listStyle: 'disc', marginLeft: 25}}>
         {props.contributions.map(({link, description}, index) =>
-            <li key={index} style={{padding: '2px 0'}}>
-                <span style={{marginRight: 5}}><Text text={description} /></span>
-                {link.length > 0 && <Link to={`https://github.com/${link}`} text={link} />}
+            <li key={index} style={{padding: '5px 0'}}>
+                {link.length > 0 && <Link to={`https://github.com/${link}`} text={description} />}
             </li>
         )}
     </ul>
@@ -39,22 +38,22 @@ export const Sidebar: React.FC = () => <div style={{padding: 5}}>
         <KeyValue k={FaGithub} v="github.com/ozyman42" link="https://github.com/ozyman42" />
         <KeyValue k={FaLinkedin} v="linkedin.com/in/alex-l-leung" link="https://linkedin.com/in/alex-l-leung" />
     </div>
+    <Header header="Open Source"/>
+    <OpenSource contributions={[
+        {link: 'ozyman42/effective-modules', description: 'Effect TS V4 API rework'},
+        {link: 'apollographql/graphql-subscriptions/pull/78', description: 'Apollo GraphQL subscriptions'},
+        {link: 'denoland/deno/issues/1558', description: 'Deno QUIC (HTTP3) support'},
+    ]} />
     <Header header="Technical Skills"/>
-    <SkillList header="Maintainability" skills={['DRY', 'Design Patterns', 'SOLID', 'Service Oriented Architecture', 'Majestic Monoliths', 'Result Error Pattern']} />
-    <SkillList header="Front-End" skills={['Expo', 'Next.js', 'Remix', 'React', 'React Native', 'Vue', 'Ionic', 'Angular', 'jQuery', 'HTML', 'SCSS', 'Tailwind', 'Webpack', 'Web Workers', 'Tamagui']} />
+    <SkillList header="Maintainability" skills={['SOLID', 'GoF Design Patterns', 'Service Oriented Arch.', 'Event Driven Arch.', 'DRY', 'Majestic Monoliths', 'Result<T,E>', 'Dependency Injection']} />
+    <SkillList header="Front-End" skills={['Expo', 'TanStack', 'Zustand', 'Jotai', 'Next.js', 'React', 'React Native', 'Ionic', 'Angular', 'jQuery', 'HTML', 'SCSS', 'Tailwind', 'Webpack', 'Web Workers', 'Tamagui']} />
     <SkillList header="Server-Side" skills={['Node.js', 'Kafka', 'PostgreSQL', 'SQLite', 'Neo4j', 'Cockroach DB', 'Redis', 'DynamoDB', 'Serverless (ex. AWS Lambda)', 'Convex', 'SpacetimeDB']} />
-    <SkillList header="Languages" skills={['TypeScript', 'Effect TS', 'Java', 'Kotlin', 'Scala', 'Rust', 'Ruby', 'Solidity', 'Golang', 'Python', 'C#', 'C', 'C++', 'Ruby', 'PHP', 'SQL', 'HCL']} />
+    <SkillList header="Languages" skills={['TypeScript', 'Effect TS', 'Java', 'Kotlin', 'Scala', 'Rust', 'Ruby', 'Solidity', 'Golang', 'Python', 'C#', 'C', 'C++', 'PHP', 'SQL']} />
     <SkillList header="Dev Infrastructure" skills={['AWS', 'GCP', 'Github Actions', 'Buildkite', 'ArgoCD', 'K8s', 'IaC', 'CDK', 'Terraform', 'Docker', 'Linux', 'Envoy', 'Nginx', 'Apache', 'Spinnaker', 'Backstage']} />
-    <SkillList header="Protocols" skills={['gRPC', 'GraphQL', 'REST', 'TLS']} />
-    <SkillList header="Crypto / AuthZN" skills={['OAuth2', 'Asymmetric Key Crypto', 'Digital Signatures', 'mTLS', 'RBAC', 'pRBAC']} />
-    <SkillList header="Web 3" skills={['EVM', 'Solana', 'Move']} />
-    <SkillList header="Observability" skills={['Open Telemetry', 'Statsig', 'Datadog', 'Grafana', 'Loki', 'Prometheus']} />
+    <SkillList header="Transport/Security Protocols" skills={['gRPC', 'GraphQL', 'REST', 'mTLS', 'WebAuthN', 'pRBAC', 'OAuth2', 'OIDC']} />
+    <SkillList header="Web 3" skills={['EVM (Solidity)', 'Solana (Anchor)']} />
+    <SkillList header="Observability" skills={['OTel', 'Statsig', 'Datadog', 'Grafana', 'Loki', 'Prometheus']} />
     {/*<Header header="Personal Interests"/>*/}
     {/*<Interests interests={["Macro Economics", "History", "Finance", "Web 3 / Smart Contracts", "Psychology"]} />*/}
-    {/*(<Header header="Open Source"/>*/}
-    <OpenSource contributions={[]/*[
-        {link: 'apollographql/graphql-subscriptions/pull/78', description: 'Authored core pub sub utility powering majority of Node.js Apollo GraphQL subscription resolvers'},
-        {link: 'denoland/deno/issues/1558', description: 'Opened discussion on implementing QUIC (HTTP3) support in Deno'},
-        {link: 'isomorphic-typescript/ts-isomorphic-gql', description: 'Created library for typesafe GraphQL clients and schemas without requiring triggered codegen'}
-    ]*/} />
+    
 </div>;

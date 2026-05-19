@@ -9,25 +9,25 @@ const additionalAllowedWords: string[] = [
     "—", '+', "—", "/",
     // Normal english
     'contractor', 'report', 'workspace', 'runtime', 'workflow', 'later', 'record', 'delivery', 'timeline', "teams'", "amalgamator", 'per', 'discount', 'recognition', 'rearchitecture',
-    'redesign', "into", 'resolution', "onboard", "amongst", "lobbied", "unified", "device",
+    'redesign', "into", 'resolution', "onboard", "amongst", "lobbied", "unified", "device", 'Increased', "rework",
     // Tech lingo
-    'OAuth', 'OAuth2', 'RBAC', 'pRBAC', "AuthN", "AuthZ", "AuthZN", 'monorepo', 'dev', 'etc.', "config", "CTO", 'IDE', "SWE", 'w/', "TPM", 
-    'microservice', "UI", "i18n", "subgraph", "typesafe", "codegen", "resolvers", "ECS", "microfrontends", "backend", "entrypoint", "codebases", "DevX",
+    'OAuth', 'OAuth2', 'RBAC', 'pRBAC', "AuthN", "AuthZ", "AuthZN", 'monorepo', 'dev', 'etc.', "config", "CTO", 'IDE', "SWE", 'w/', "TPM", "OTP", "webpages", "GoF",
+    'microservice', "UI", "i18n", "subgraph", "typesafe", "codegen", "resolvers", "ECS", "microfrontends", "backend", "entrypoint", "codebases", "DevX", "supergraph", 'Result<T,E>',
     // Proper nouns
     "LinkedIn", "Inglemoor", "Northshore", "Zillow", "Twilio", "Mailgun", "TransUnion", "IMDB", "IB", "NSD", "Hulu", "Disney+", "Flexport",
     // Technologies
-    'gql', 'GraphQL', 'AWS', 'Redshift', 'gRPC', 'webpack', 'Skoville', "RPC", "RabbitMQ", "Redis", "PostgreSQL",
+    'gql', 'GraphQL', 'AWS', 'Redshift', 'gRPC', 'webpack', 'Skoville', "RPC", "RabbitMQ", "Redis", "PostgreSQL", "Jotai",
     "Redux", "Vue", "MobX", "jQuery", "HTML5", "JS", "SCSS", "C#", "PHP", "SQLite", "Neo4j", "C++", "Golang",
     "Haskell", "Deno", "Node.js", "MongoDB", "RethinkDB", "Pulumi", "Kubernetes", "Docker", "Nginx", "TLS", "mTLS",
     "ts", "TypeGraphQL", "Hasura", "Prisma", "Laravel", "CSS", "MySQL", "HL7", "HMR", "NPM", "package.json", "tsconfig.json",
-    "Lerna", "AsyncIterator", "v2", "ReactXP", "ORM", "ERB", "EC2", "CI/CD", "Elasticsearch", "Terraform", "IaC", "CDK", 'Zustand',
-    "DynamoDB", "Serverless", 'Kotlin', 'Cognito', 'Crypto', 'EVM', 'Solana', "GCP", "Nx", "NFT", "K8s", "DAO", "Next.js", "QUIC", "HTTP3", "HCL", "Buildkite", "ArgoCD",
+    "Lerna", "AsyncIterator", "v2", "ReactXP", "ORM", "ERB", "EC2", "CI/CD", "Elasticsearch", "Terraform", "IaC", "CDK", 'Zustand', "TanStack",
+    "DynamoDB", "Serverless", 'Kotlin', 'Cognito', 'Crypto', 'EVM', 'Solana', "GCP", "Nx", "NFT", "K8s", "DAO", "Next.js", "QUIC", "HTTP3", "HCL", "Buildkite", "ArgoCD", "WebAuthN", "OTel", "OIDC",
     'Grafana', 'Sumologic',
     "Datadog", "CloudMap", "PNPM", "Algolia", "OpenSearch", 'SpacetimeDB', 'Statsig', 'Tamagui', 
     // Systems
     "\"Flex\"",
     // Numbers
-    "$1.5m", "6k", "$500k", "10k", "10,000", "6,000", "50%", "90%", "99%"
+    "$1.5m", "6k", "$500k", "10k", "10,000", "6,000", "50%", "90%", "99%", "V4"
 ];
 additionalAllowedWords.forEach(word => dictionary.insert(word));
 

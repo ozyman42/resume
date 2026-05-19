@@ -12,16 +12,16 @@ const EXPERIENCES: DatedExperienceInput[] = [
         teams: [
             {
                 teamName: "Foundational Services",
-                technologies: ["TypeScript", "GraphQL", "Node", "Next", "Envoy", "Terraform", "K8s", "OAuth2", "RBAC", "AWS"],
+                technologies: ["Next.js", "TypeScript", "GraphQL", "Node.js", "Bun", "Effect TS", "React Ink", "Java", "Envoy", "Terraform", "K8s", "OAuth2", "RBAC", "AWS", "Rust", "Buildkite"],
                 contributions: [
-                    "Championed operational excellence across GraphQL stack. Reduced all API request latency by 50%. Improved backend reliability from below 90% to over 99% by architecting fine-grained error attribution system and driving company-wide accountability.",
-                    "Standardized authorization across company, both GraphQL authz and service-to-service authz",
-                    "Got cross company consensus on new dynamic service discovery standard using AWS CloudMap. This merged several competing standards at the company.",
-                    "Consolidated ingress across all apps / external APIs into a single entrypoint for improved security / simplicity; led team of 4 to create new unified API gateway",
-                    "Drove consolidation of similar libraries and developer tools across multiple codebases. Measured DevX improvements quantitatively using developer velocity metrics, code reduction, and developer surveys and qualitatively using developer anecdotes and interviews",
-                    "Led Flow to TypeScript migration for legacy websites and tools",
-                    "Led migration from Algolia to OpenSearch for one division, saving $500k per year",
-                    "Architected microfrontends framework for Flexport. Lead team of 7 engineers to create this; onboarded six separate orgs, become foundation for Flexport's most profitable applications",
+                    "Architected microfrontends framework for Flexport. Lead team of 7 engineers to create this, onboarded six separate orgs. Became foundation for Flexport's most profitable applications.",
+                    "Championed OE across GraphQL stack. Reduced latency by 50%. Increased reliability from 90% to 99% by architecting error attribution system, driving company-wide accountability.",
+                    "Standardized GraphQL authz and service-to-service authz across all microservices.",
+                    "Standardized service discovery on AWS CloudMap, merging several competing standards.",
+                    "Led team of 4 to consolidate ingress across all apps and APIs into unified API gateway.",
+                    "Drove consolidation of similar libraries and developer tools across codebases. Measured DevX improvements with velocity metrics, code reduction, and developer surveys.",
+                    "Led Flow to TypeScript migration for legacy websites and tools.",
+                    "Led migration from Algolia to OpenSearch for warehouse org, saving $500k per year.",
                 ]
             }
         ]
@@ -35,9 +35,9 @@ const EXPERIENCES: DatedExperienceInput[] = [
                 teamName: "Flex",
                 technologies: ["TypeScript", "GraphQL", "Node.js", "Express", "Spinnaker"],
                 contributions: [
-                    "Drove adoption of our cross-platform UI-as-data microservice \"Flex\", it allows simple, generic device rendering code and rapid experimentation by configuration",
-                    "Architected migration of Flex from a RESTful API to GraphQL subgraph for the new company-wide federated GraphQL service created as part of the Hulu, Disney+ unification effort",
-                    "Forged partnership w/ similar Disney team. We took over UI as data API, they i18n as a service"
+                    "Drove adoption of UI-as-data microservice \"Flex\", enabling minimal device rendering code.",
+                    "Led migration of Flex from REST to GraphQL; integrated into Disney's supergraph.",
+                    "Partnered w/ overlapping Disney team. Flex took over UI as data, they took over i18n."
                 ]
             }
         ]
@@ -50,43 +50,41 @@ const EXPERIENCES: DatedExperienceInput[] = [
         teams: [
             {
                 teamName: "Fire TV",
-                technologies: ["Java", "Kotlin", "Docker", "AWS", "DynamoDB"],
+                technologies: ["Java", "Kotlin", "Lambda", "AWS", "DynamoDB"],
                 contributions: [
-                    "Designed, implemented microservice responsible for ingestion of IMDB movies and shows catalog"
+                    "Designed, implemented serverless component that ingests IMDB catalog. Event-driven."
                 ]
             },
             {
                 teamName: "Last Mile Identity",
                 technologies: ["Java", "AWS", "Cognito", "Coral (RPC)", "Lambda"],
                 contributions: [
-                    "Extended OAuth microservice to support AuthN of various user types",
-                    "Maintained role-based AuthZ (RBAC) microservice and guided system redesign"
+                    "Extended OAuth microservice to support AuthN of various additional user types.",
+                    "Led redesign of RBAC authorization microservice."
                 ]
             },
             {
                 teamName: "Last Mile Account Management",
                 technologies: ["Java", "AWS", "Coral (RPC)", "Elasticsearch", "React"],
                 contributions: [
-                    "Designed and implemented microservices as part of legacy monolith rearchitecture",
-                    "Created hybrid web-app views in React"
+                    "Designed and implemented microservices as part of legacy monolith rearchitecture.",
+                    "Created hybrid web-app views in React for delivery driver onboarding."
                 ]
             },
             {
                 teamName: "Last Mile Risk and Compliance",
                 technologies: ["Java", "AWS", "Angular", "mTLS", "Coral (RPC)", "SQL"],
                 contributions: [
-                    "Integrated background check microservice with external vendor REST APIs",
-                    "Microservices for in-app facial recognition of package deliverers (en-route ID check)",
-                    "Created data warehousing pipelines from AWS Dynamo DB tables to AWS Redshift",
-                    "Automated code deployment (CI/CD pipeline building)"
+                    "Integrated background check microservice with external vendor REST APIs.",
+                    "Extended services responsible for facial recognition of package deliverers",
+                    "Created data warehousing pipeline platform for Dynamo DB to Redshift streaming.",
                 ]
             },
             {
                 teamName: "Payments Experience",
                 technologies: ["Scala", "Java", "jQuery", "SCSS", "Coral (RPC)"],
                 contributions: [
-                    "Designed and implemented one-time-password verification for payment screens",
-                    "Integrated with away teams' authentication services",
+                    "Designed and implemented OTP verification for payment screens. Full-stack project."
                 ]
             }
         ]
@@ -100,33 +98,33 @@ const EXPERIENCES: DatedExperienceInput[] = [
             {
                 technologies: ["TypeScript", "GraphQL", "React", "React Native", "Ruby on Rails", "Jenkins", "AWS", "MySQL"],
                 contributions: [
-                    "Built Ruby on Rails ERB / jQuery views then later migrated these to React + GraphQL",
-                    "Designed MySQL schema. Optimized DB migrations, SQL transactions, ORM code",
-                    "Maintained server infrastructure; configured EC2, Jenkins, Nginx, MySQL, Redis",
-                    "Led project to create new mobile app using React Native, Redux, and Apollo GraphQL",
+                    "Built Ruby on Rails ERB / jQuery webpages then later migrated these to React + GraphQL.",
+                    "Designed MySQL schema. Optimized DB migrations, SQL transactions, ORM code.",
+                    "Maintained server infrastructure; configured EC2, Jenkins, Nginx, MySQL, Redis.",
+                    "Led project to create new mobile app using React Native, Redux, and Apollo GraphQL.",
                     "Integrated 3rd-party APIs such as Stripe, Zillow, TransUnion, Twilio, Mailgun, etc.",
-                    "Lead team in goal planning and managing delivery timelines. Reported sprint progress to CEO"
+                    // "Led team in goal planning and managing delivery timelines. Reported sprint progress to CEO"
                 ]
             }
         ]
     },
-    /*{
+    {
         start: new Date('8/15/2014'), end: new Date('6/24/2016'),
         jobTitle: 'Junior Software Engineer',
         employerName: "ThruHealth",
         jobLocation: "Bellevue",
         teams: [
             {
-                technologies: ["PHP", "Laravel", "Java", "SCSS", "jQuery", "C#", "Angular"],
+                technologies: ["PHP", "Laravel", "Java", "SCSS", "jQuery", "C#", "Angular", "Ionic"],
                 contributions: [
-                    'Created company marketing website and blog with CSS, jQuery, and PHP',
-                    'Constructed web crawlers to pull online health-care data ontologies using C#',
-                    'Wrote utilities to parse and normalize HL7 electronic health records using Java',
-                    'Created mobile application using Ionic 1.0'
+                    'Created company marketing website and blog using CSS, jQuery, and PHP.',
+                    'Wrote web crawlers to pull online health-care data ontologies using C#.',
+                    'Wrote utilities to parse and normalize HL7 electronic health records using Java.',
+                    'Created proof of concept mobile application using Ionic 1.0.'
                 ]
             }
         ]
-    },*/
+    },
     /*{
         start: new Date('8/12/2014'), end: new Date('6/20/2015'),
         jobTitle: 'Web Development Contractor',

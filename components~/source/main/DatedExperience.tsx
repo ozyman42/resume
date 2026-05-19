@@ -41,8 +41,8 @@ const Paragraph: React.FC<{style?: React.CSSProperties, children: React.ReactNod
 </p>
 
 const Team: React.FC<{team: TeamExperience}> = props => <>
-    <Paragraph style={{marginTop: 4}}>
-        {props.team.teamName && <span style={{marginRight: 5, color: BADGE_HEADER_COLOR}}>
+    <Paragraph style={{marginTop: 0}}>
+        {props.team.teamName && <span style={{marginRight: 10, color: BADGE_HEADER_COLOR, whiteSpace: 'nowrap', fontSize: 15}}>
             {props.team.teamName}
         </span>}
         <HorizontalList items={props.team.technologies} />
@@ -50,20 +50,30 @@ const Team: React.FC<{team: TeamExperience}> = props => <>
     {
         props.team.contributions.length === 0 ? 
             null :
-        props.team.contributions.length === 1 ? 
-            <Paragraph style={{color: MAIN_THEME_LESS_EMPHASIS_COLOR}}>
-                <Text text={props.team.contributions[0]} />
-            </Paragraph> :
-        // else
             <ul style={{listStyle: "disc inside"}}>
                 {
-                    props.team.contributions.map((contribution, index) => <li key={index} style={{lineHeight: PARAGRAPH_LINE_HEIGHT, color: MAIN_THEME_LESS_EMPHASIS_COLOR, fontSize: 14}}>
+                    props.team.contributions.map((contribution, index) => <li key={index} style={{lineHeight: PARAGRAPH_LINE_HEIGHT, color: MAIN_THEME_LESS_EMPHASIS_COLOR, fontSize: 15}}>
                         <Text text={contribution} />
                     </li>)
                 }
             </ul>
     }
 </>;
+
+function totalTime(from: Date, to: Date) {
+    const totalMonths = (
+        (to.getFullYear() - from.getFullYear()) * 12 +
+        ((to.getMonth() + 1) - from.getMonth())
+    );
+    function plural(word: string, n: number) {
+        return n === 1 ? word : `${word}s`;
+    }
+    if (totalMonths >= 12) {
+        const years = Math.round((totalMonths / 12) * 10) / 10;
+        return `${years} ${plural("year", years)}`;
+    }
+    return `${totalMonths} ${plural("month", totalMonths)}`
+}
 
 const DATE_SECTION_WIDTH = 125;
 export const DatedExperience: React.FC<DatedExperienceInput> = props => <div style={{marginBottom: 10, display: 'flex', flexDirection: 'row'}}>
@@ -72,6 +82,7 @@ export const DatedExperience: React.FC<DatedExperienceInput> = props => <div sty
             Object.entries({
                 at: props.employerName,
                 ...(props.jobLocation ? {in: props.jobLocation} : {"": "Remotely"}),
+                for: totalTime(props.start, props.end === "Present" ? new Date() : props.end),
                 from: props.start,
                 to: props.end,
             }).map(([k, v], index) => 
