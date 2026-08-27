@@ -46,12 +46,12 @@ export const Sidebar: React.FC = () => <div style={{padding: 5}}>
     ]} />
     <Header header="Technical Skills"/>
     <SkillList header="Maintainability" skills={['SOLID', 'GoF Design Patterns', 'Service Oriented Arch.', 'Event Driven Arch.', 'DRY', 'Majestic Monoliths', 'Result<T,E>', 'Dependency Injection']} />
-    <SkillList header="Front-End" skills={['Expo', 'TanStack', 'Zustand', 'Jotai', 'Next.js', 'React', 'React Native', 'Ionic', 'Angular', 'jQuery', 'HTML', 'SCSS', 'Tailwind', 'Webpack', 'Web Workers', 'Tamagui']} />
-    <SkillList header="Server-Side" skills={['Node.js', 'Kafka', 'PostgreSQL', 'SQLite', 'Neo4j', 'Cockroach DB', 'Redis', 'DynamoDB', 'Serverless (ex. AWS Lambda)', 'Convex', 'SpacetimeDB']} />
+    <SkillList header="Front-End" skills={['Expo', 'Tauri', 'TanStack', 'Zustand', 'Jotai', 'Next.js', 'React', 'React Native', 'Ionic', 'Angular', 'jQuery', 'HTML', 'SCSS', 'Tailwind', 'Webpack', 'Web Workers', 'Tamagui']} />
+    <SkillList header="Server-Side" skills={['Node.js', 'Bun', 'Kafka', 'PostgreSQL', 'SQLite', 'Neo4j', 'Cockroach DB', 'Redis', 'DynamoDB', 'Serverless (ex. AWS Lambda)', 'Convex', 'SpacetimeDB']} />
     <SkillList header="Languages" skills={['TypeScript', 'Effect TS', 'Java', 'Kotlin', 'Scala', 'Rust', 'Ruby', 'Solidity', 'Golang', 'Python', 'C#', 'C', 'C++', 'PHP', 'SQL']} />
     <SkillList header="Dev Infrastructure" skills={['AWS', 'GCP', 'Github Actions', 'Buildkite', 'ArgoCD', 'K8s', 'IaC', 'CDK', 'Terraform', 'Docker', 'Linux', 'Envoy', 'Nginx', 'Apache', 'Spinnaker', 'Backstage']} />
-    <SkillList header="Transport/Security Protocols" skills={['gRPC', 'GraphQL', 'REST', 'mTLS', 'WebAuthN', 'pRBAC', 'OAuth2', 'OIDC']} />
-    <SkillList header="Web 3" skills={['EVM (Solidity)', 'Solana (Anchor)']} />
+    <SkillList header="Transport/Security Protocols" skills={['gRPC', 'GraphQL', 'REST', 'mTLS', 'WebAuthN', 'pRBAC', 'OAuth2', 'OIDC', 'PK Crypto']} />
+    <SkillList header="Web 3" skills={['EVM (Solidity)', 'Solana (Anchor)', 'Oracles']} />
     <SkillList header="Observability" skills={['OTel', 'Statsig', 'Datadog', 'Grafana', 'Loki', 'Prometheus']} />
     {/*<Header header="Personal Interests"/>*/}
     {/*<Interests interests={["Macro Economics", "History", "Finance", "Web 3 / Smart Contracts", "Psychology"]} />*/}

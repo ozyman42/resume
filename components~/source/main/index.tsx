@@ -2,6 +2,7 @@ import * as React from 'react';
 import { MainSection } from './MainSection';
 import { DatedExperience, DatedExperienceInput } from './DatedExperience';
 import { SimpleExperienceInput, SimpleExperience } from './SimpleExperience';
+import { Option } from "effect";
 
 const EXPERIENCES: DatedExperienceInput[] = [
     {
@@ -12,19 +13,22 @@ const EXPERIENCES: DatedExperienceInput[] = [
         teams: [
             {
                 teamName: "Foundational Services",
-                technologies: ["Next.js", "TypeScript", "GraphQL", "Node.js", "Bun", "Effect TS", "React Ink", "Java", "Envoy", "Terraform", "K8s", "OAuth2", "RBAC", "AWS", "Rust", "Buildkite"],
+                technologies: ["Next", "TypeScript", "GraphQL", "Node", "Bun", "Effect TS", "React Ink", "React Native", "Java", "Envoy", "Terraform", "K8s", "OAuth2", "RBAC", "AWS", "Rust", "Buildkite"],
                 contributions: [
-                    "Architected microfrontends framework for Flexport. Lead team of 7 engineers to create this, onboarded six separate orgs. Became foundation for Flexport's most profitable applications.",
-                    "Championed OE across GraphQL stack. Reduced latency by 50%. Increased reliability from 90% to 99% by architecting error attribution system, driving company-wide accountability.",
+                    "Architected microfrontends platform. Led team of 7 engineers to build platform then onboard over a dozen product teams. Became foundation for Flexport's most profitable applications.",
+                    "Improved OE across GraphQL stack. Reduced latency by 50%. Increased reliability from 90% to 99% by creating error attribution system, driving company-wide accountability.",
                     "Standardized GraphQL authz and service-to-service authz across all microservices.",
                     "Standardized service discovery on AWS CloudMap, merging several competing standards.",
                     "Led team of 4 to consolidate ingress across all apps and APIs into unified API gateway.",
                     "Drove consolidation of similar libraries and developer tools across codebases. Measured DevX improvements with velocity metrics, code reduction, and developer surveys.",
                     "Led Flow to TypeScript migration for legacy websites and tools.",
                     "Led migration from Algolia to OpenSearch for warehouse org, saving $500k per year.",
+                    "Created reusable Kubernetes primitives on top of CDK for deploying new services"
                 ]
             }
-        ]
+        ],
+        stage: Option.some("Series E"),
+        employeeNumber: Option.some({prefix: "SWE #", value: "~500"})
     },
     {
         start: new Date("9/20/2021"), end: new Date("2/1/2022"),
@@ -40,7 +44,9 @@ const EXPERIENCES: DatedExperienceInput[] = [
                     "Partnered w/ overlapping Disney team. Flex took over UI as data, they took over i18n."
                 ]
             }
-        ]
+        ],
+        stage: Option.some("Public"),
+        employeeNumber: Option.none()
     },
     {
         start: new Date("9/25/2017"), end: new Date("9/15/2021"),
@@ -87,7 +93,9 @@ const EXPERIENCES: DatedExperienceInput[] = [
                     "Designed and implemented OTP verification for payment screens. Full-stack project."
                 ]
             }
-        ]
+        ],
+        stage: Option.some("Public"),
+        employeeNumber: Option.none()
     },
     {
         start: new Date("8/01/2016"), end: new Date("9/22/2017"),
@@ -106,7 +114,9 @@ const EXPERIENCES: DatedExperienceInput[] = [
                     // "Led team in goal planning and managing delivery timelines. Reported sprint progress to CEO"
                 ]
             }
-        ]
+        ],
+        stage: Option.some("Post-seed"),
+        employeeNumber: Option.some({prefix: "empl. #", value: "3"})
     },
     {
         start: new Date('8/15/2014'), end: new Date('6/24/2016'),
@@ -123,7 +133,9 @@ const EXPERIENCES: DatedExperienceInput[] = [
                     'Created proof of concept mobile application using Ionic 1.0.'
                 ]
             }
-        ]
+        ],
+        stage: Option.some("Post-seed"),
+        employeeNumber: Option.some({prefix: "empl. #", value: "6"})
     },
     /*{
         start: new Date('8/12/2014'), end: new Date('6/20/2015'),

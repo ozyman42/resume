@@ -25,5 +25,5 @@ export const CODE_SNIPPET_STYLE: CSSProperties = {
     fontSize: 12.5
 };
 export const PARAGRAPH_LINE_HEIGHT = 1.6;
-export const MIN_FONT_SIZE = "13px";
+export const MIN_FONT_SIZE = "12px";
 export const EXPERIENCE_TITLE_FONT_SIZE = MIN_FONT_SIZE; //"15px";

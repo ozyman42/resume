@@ -3,6 +3,7 @@ import { BADGE_HEADER_COLOR, MAIN_THEME_EMPHASIS_COLOR, MAIN_THEME_LEAST_EMPHASI
 import { ExperienceTitle } from './ExperienceTitle';
 import { HorizontalList } from './HorizontalList';
 import { Text } from '../Text';
+import { Option } from "effect";
 
 export interface TeamExperience {
     contributions: string[];
@@ -13,6 +14,8 @@ export interface TeamExperience {
 export interface DatedExperienceInput {
     start: Date;
     end: Date | 'Present';
+    stage: Option.Option<string>;
+    employeeNumber: Option.Option<{prefix: string; value: string;}>;
     jobTitle: string;
     employerName: string;
     jobLocation?: string;
@@ -29,12 +32,12 @@ function formatLabelValue(value: string | Date) {
     return `${MONTH_LABELS[value.getMonth()]} ${value.getFullYear()}`;
 }
 
-const LabelItem: React.FC<{first: boolean, labelName: string, labelValue: string}> = props => <p style={{marginTop: props.first ? 0 : 1}}>
-    <span style={{width: 30, display: "inline-block", textAlign: 'right', marginRight: 5}}>
+const LabelItem: React.FC<{first: boolean, labelName: string, labelValue: string}> = props => <div style={{marginTop: props.first ? 0 : 1, display: 'flex', flexDirection: 'row'}}>
+    <p style={{width: 38, display: "inline-block", textAlign: 'right', marginRight: 5}}>
         <Text text={props.labelName} />
-    </span>
-    <span style={{color: MAIN_THEME_LESS_EMPHASIS_COLOR}}>{props.labelValue}</span>
-</p>
+    </p>
+    <p style={{color: MAIN_THEME_LESS_EMPHASIS_COLOR, whiteSpace: 'pre-wrap'}}>{props.labelValue}</p>
+</div>
 
 const Paragraph: React.FC<{style?: React.CSSProperties, children: React.ReactNode}> = props => <p style={{lineHeight: PARAGRAPH_LINE_HEIGHT, ...(props.style || {})}} >
     {props.children}
@@ -52,7 +55,7 @@ const Team: React.FC<{team: TeamExperience}> = props => <>
             null :
             <ul style={{listStyle: "disc inside"}}>
                 {
-                    props.team.contributions.map((contribution, index) => <li key={index} style={{lineHeight: PARAGRAPH_LINE_HEIGHT, color: MAIN_THEME_LESS_EMPHASIS_COLOR, fontSize: 15}}>
+                    props.team.contributions.map((contribution, index) => <li key={index} style={{lineHeight: PARAGRAPH_LINE_HEIGHT, color: MAIN_THEME_LESS_EMPHASIS_COLOR, fontSize: 14, paddingLeft: "1.5em", textIndent: "-1.5em"}}>
                         <Text text={contribution} />
                     </li>)
                 }
@@ -85,6 +88,8 @@ export const DatedExperience: React.FC<DatedExperienceInput> = props => <div sty
                 for: totalTime(props.start, props.end === "Present" ? new Date() : props.end),
                 from: props.start,
                 to: props.end,
+                ...(Option.isSome(props.stage) ? {stage: props.stage.value} : {}),
+                ...(Option.isSome(props.employeeNumber) ? {[props.employeeNumber.value.prefix]: props.employeeNumber.value.value} : {})
             }).map(([k, v], index) => 
                 <LabelItem
                     key={index}

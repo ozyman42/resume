@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "bun run dev",
     "dev": "next dev",
     "gen": "bun run scripts/get-pdf.ts"
   },
@@ -11,6 +12,7 @@
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.16",
+    "effect": "^4.0.0-beta.107",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.2",
     "next": "13.5.2",
